@@ -5,7 +5,7 @@
 - IDE：[VS Code](https://code.visualstudio.com/)
 - 命令行工具：[Cmder](https://cmder.net/)（windows系统，自带Git）
 - 版本控制：[Git](https://git-scm.com/)
-- 代码仓库：[GitHub Desktop](https://desktop.github.com/)
+- GUI代码仓库：[GitHub Desktop](https://desktop.github.com/)
 - 浏览器：[Chrome](https://www.google.cn/chrome/)
 - 截图工具：[Snipaste](https://www.snipaste.com/)
 - 设计：Photoshop CC、Premiere Pro CC
