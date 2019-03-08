@@ -12,7 +12,6 @@
 - 思维导图：[XMind ZEN](https://www.xmind.cn/)
 - 翻译工具：网易有道词典PC版
 - 搜索：Google、[Bing](https://cn.bing.com/)
----
 
 ## 网络资源集
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/)
@@ -25,7 +24,6 @@
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
 - 刷算法：[LeetCode](https://leetcode-cn.com/)
 - 新闻资讯：[InfoQ](https://www.infoq.cn/)
----
 
 ## VS Code常用插件
 - 标签自动补全：Auto Close Tag
