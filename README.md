@@ -14,16 +14,17 @@
 - 搜索：Google、[Bing](https://cn.bing.com/)
 
 ## 网络资源集
-- 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/)
+- 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/) | [JavaScript教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 - 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/)
 - 代码仓库：[GitHub](https://github.com/)
 - CDN加速服务：[BootCDN](https://www.bootcdn.cn/)
 - CSS样式重置表：[normalize](https://www.bootcdn.cn/normalize/)
 - 占位图片生成器：[dummyimage](https://dummyimage.com/)
 - CSS框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/)
+- CSS奇淫技巧：[CSS Tricks](https://lhammer.cn/You-need-to-know-css/#/zh-cn/)
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
-- 刷算法：[LeetCode](https://leetcode-cn.com/)
-- 新闻资讯：[InfoQ](https://www.infoq.cn/)
+- 刷算法：[LeetCode](https://leetcode-cn.com/) | [动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation.git)
+- 新闻资讯：[InfoQ](https://www.infoq.cn/) | [掘金](https://juejin.im/)
 
 ## VS Code常用插件
 - 标签自动补全：Auto Close Tag
