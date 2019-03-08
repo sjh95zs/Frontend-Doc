@@ -8,7 +8,7 @@
 - GUI代码仓库：[GitHub Desktop](https://desktop.github.com/)
 - 浏览器：[Chrome](https://www.google.cn/chrome/)
 - 截图工具：[Snipaste](https://www.snipaste.com/)
-- 设计：Photoshop CC、Premiere Pro CC
+- 设计：Photoshop CC 2018、Premiere Pro CC 2018
 - 思维导图：[XMind ZEN](https://www.xmind.cn/)
 - 翻译工具：网易有道词典PC版
 - 搜索：Google、[Bing](https://cn.bing.com/)
@@ -17,7 +17,7 @@
 ## 网络资源集
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/)
 - 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/)
-- 代码仓库：[Github](https://github.com/)
+- 代码仓库：[GitHub](https://github.com/)
 - CDN加速服务：[BootCDN](https://www.bootcdn.cn/)
 - CSS样式重置表：[normalize](https://www.bootcdn.cn/normalize/)
 - 占位图片生成器：[dummyimage](https://dummyimage.com/)
