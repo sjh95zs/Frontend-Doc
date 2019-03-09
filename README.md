@@ -1,6 +1,12 @@
-# Frontend Doc —— 前端文档库
+# Frontend Doc - 前端文档库
+- Xiaobin-Wu的前端文档库，记录前端生涯的一切
+- 有疑问的朋友，请发邮件至[845225263@qq.com]()
 
-## 前端-工具集
+
+## 一、前言
+
+
+## 二、前端-工具集
 - 系统：windows 10 专业版
 - IDE：[VS Code](https://code.visualstudio.com/)
 - 命令行工具：[Cmder](https://cmder.net/)（windows系统，自带Git）
@@ -13,7 +19,7 @@
 - 翻译工具：网易有道词典PC版
 - 搜索：Google、[Bing](https://cn.bing.com/)
 
-## 网络资源集
+## 三、网络资源集
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/) | [JavaScript教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 - 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/)
 - 代码仓库：[GitHub](https://github.com/)
@@ -26,7 +32,7 @@
 - 刷算法：[LeetCode](https://leetcode-cn.com/) | [动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation.git)
 - 新闻资讯：[InfoQ](https://www.infoq.cn/) | [掘金](https://juejin.im/)
 
-## VS Code常用插件
+## 四、VS Code常用插件
 - 标签自动补全：Auto Close Tag
 - 标签自动更改：Auto Rename Tag
 - 简体中文翻译包：Chinese (Simplified) Language Pack for Visual Studio Code
