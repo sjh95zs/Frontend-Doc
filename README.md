@@ -2,6 +2,8 @@
 - Xiaobin-Wu的前端文档库，记录前端生涯的一切
 - 有疑问的朋友，请发邮件至[845225263@qq.com]()
 
+<br/>
+
 ## 一、文件目录
  |     文件名      |        内容介绍        |
  | :-------------: | :--------------------: |
@@ -12,6 +14,7 @@
  |   网络资源集    | 经个人筛选过的优质网站 |
  | VS Code常用插件 |   个人用过的插件推荐   |
 
+<br/>
 
 ## 二、前端-工具集
 - 系统：windows 10 专业版
@@ -26,6 +29,8 @@
 - 翻译工具：网易有道词典PC版
 - 搜索：Google、[Bing](https://cn.bing.com/)
 
+<br/>
+
 ## 三、网络资源集
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/) | [JavaScript教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000)
 - 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/)
@@ -38,6 +43,8 @@
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
 - 刷算法：[LeetCode](https://leetcode-cn.com/) | [动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation.git)
 - 新闻资讯：[InfoQ](https://www.infoq.cn/) | [掘金](https://juejin.im/)
+
+<br/>
 
 ## 四、VS Code常用插件
 - 标签自动补全：Auto Close Tag
