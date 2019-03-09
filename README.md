@@ -36,4 +36,4 @@
 - 浏览器快捷打开：open in browser
 - 文件图标：vscode-icons
 - 撸代码特效：Power Mode
-- 科学上网：开门，查水表？？？
+- 科学上网：开门，查水表???
