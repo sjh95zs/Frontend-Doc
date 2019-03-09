@@ -21,7 +21,7 @@
 - CSS样式重置表：[normalize](https://www.bootcdn.cn/normalize/)
 - 占位图片生成器：[dummyimage](https://dummyimage.com/)
 - CSS框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/)
-- CSS奇淫技巧：[CSS Tricks](https://lhammer.cn/You-need-to-know-css/#/zh-cn/)
+- CSS奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/)
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
 - 刷算法：[LeetCode](https://leetcode-cn.com/) | [动画的形式呈现解LeetCode题目的思路](https://github.com/MisterBooo/LeetCodeAnimation.git)
 - 新闻资讯：[InfoQ](https://www.infoq.cn/) | [掘金](https://juejin.im/)
