@@ -5,7 +5,7 @@
 
 ## 一、前言
 
-去恶趣味
+去恶趣味我
 ## 二、前端-工具集
 - 系统：windows 10 专业版
 - IDE：[VS Code](https://code.visualstudio.com/)
