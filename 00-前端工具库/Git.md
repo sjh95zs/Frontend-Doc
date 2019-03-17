@@ -5,8 +5,6 @@
 - 版本控制系统：[Git](https://git-scm.com/)
 - GUI 代码仓库：[GitHub Desktop](https://desktop.github.com/)
 
----
-
 ## 一、寻求帮助
 
 - 帮助信息：git help
@@ -82,7 +80,7 @@
 
 ---
 
-0. Git 世界
+1. Git 世界
    ![404](images/0-Git分布式世界.png)
 
 ---
