@@ -10,7 +10,7 @@
 - 帮助信息：git help
 - 显示所有的命令：git help -a
 - 查看 git 的使用手册：git help -g
-- 查看更详细的内容：git help [命令名称/手册名称]，如 git help push
+- 查看更详细的内容：git help 命令名称/手册名称，如 git help push
 
 ## 二、配置
 
@@ -77,8 +77,6 @@
 ```
 
 ## 八、Git 思维脑图
-
----
 
 1. Git 世界
    ![404](images/0-Git分布式世界.png)
