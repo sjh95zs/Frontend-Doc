@@ -24,4 +24,4 @@
 
 - Google 字体大全：[Google Fonts](https://fonts.google.com/)
 
-- 前端兼容性检测：[Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/)
+- 前端兼容性检测：[caniuse](https://caniuse.com/)
