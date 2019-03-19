@@ -80,11 +80,11 @@
 >
 > box-shadow 可以添加一个或多个阴影，添加多个阴影需要用逗号隔开。每个阴影由下面几个属性构成
 
-    ```
-    .box {
-        box-shadow: h-shadow v-shadow blur spread color inset;
-    }
-    ```
+```
+.box {
+    box-shadow: h-shadow v-shadow blur spread color inset;
+}
+```
 
 - h-shadow：必需，表示水平阴影的位置，正值阴影向右，负值向左
 - v-shadow：必需，表示垂直阴影的位置，正值阴影向下，负值向上
