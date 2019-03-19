@@ -100,10 +100,10 @@
 
 ### 样式顺序
 
-1. 布局方式、位置，相关属性（position, left, right, top, bottom, z-index）
-2. 盒模型，相关属性包括（display, float, width, height, margin, padding, border, border-radius）
-3. 文本排版，相关属性包括（font, color, background, line-height, text-align）
-4. 视觉外观，相关属性包括：(color, background, list-style, transform, animation)
+1. 布局方式、位置：position, left, right, top, bottom, z-index，......
+2. 盒模型：display, float, width, height, margin, padding, border, border-radius，......
+3. 文本排版：font, color, background, line-height, text-align，......
+4. 视觉外观：color, background, list-style, transform, animation，......
 
 ```
 .box {
