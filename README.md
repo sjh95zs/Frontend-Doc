@@ -9,8 +9,8 @@
  | 00-前端工具库   | 本人极力推荐的前端工具               |
  | 01-HTML库       | HTML + HTML5                         |
  | 02-CSS库        | CSS + CSS3                           |
- | 03-JavaScript库 | JavaScript库                         |
- | 04-CSS框架      | Bootstrap、Semantic UI、Foundation等 |
+ | 03-CSS框架      | Bootstrap、Semantic UI、Foundation等 |
+ | 04-JavaScript库 | JavaScript库                         |
  | 05-网络资源库   | 本人筛选过的优质网站                 |
 
 ## 学习路线图谱
