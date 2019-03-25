@@ -11,14 +11,14 @@
 - 整理代码：Alt+Shift+F
 - 复制当前行到下一行：Ctrl+D
 - 拷贝整行（剪切同理）：直接 Ctrl+C
+- 删除整行：ctrl+shift+k
 - 查找：Ctrl+F
 - 替换：Ctrl+H
+- 搜文件：Ctrl+P
 - 创建光标：Alt+鼠标左击
 - 移动行：Alt+↑/↓
 - 打开命令行：Ctrl+`
-- 搜文件：Ctrl+P
 - 添加注释：Ctrl+/
-- 删除整行：ctrl+shift+k
 
 ## 常用插件
 
@@ -29,8 +29,12 @@
 - 简体中文翻译包：Chinese (Simpliaied) Language Pack for Visual Studio Code
 - 颜色详情：Color Info
 - 浏览器调试：Debugger for Chrome
+- VS Code 主题：DuoTone Dark Themes
+- 语法校验：ESLint
 - 编写 Markdown：Markdown All in One
 - 浏览器快捷打开：open in browser
+- 格式美化：Prettier - Code formatter
+- vue 格式检验：Vetur
 - 文件图标：vscode-icons
-- 撸代码特效：Power Mode
 - 刷算法：LeetCode
+- 撸代码特效：Power Mode
