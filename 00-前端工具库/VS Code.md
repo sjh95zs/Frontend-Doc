@@ -18,6 +18,7 @@
 - 打开命令行：Ctrl+`
 - 搜文件：Ctrl+P
 - 添加注释：Ctrl+/
+- 删除整行：ctrl+shift+k
 
 ## 常用插件
 
