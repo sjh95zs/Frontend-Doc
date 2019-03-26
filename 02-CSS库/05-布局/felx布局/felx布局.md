@@ -1,69 +1,14 @@
-# 布局
-
-## 一、基因 —— display 属性
-
-- block 块级：霸占整宽，且可以同时作用“上下左右”，即男生
-  - div、h、p、ul、ol、dl、table、form、......
-- inline 行内：高度和宽度全靠内容撑，只能作用“左右 padding、左右 margin 和左右 border”，即女生
-  - span、a、......
-- inline-block 行内块级：自适应内容,也可作用“上下左右”，且不会霸占整宽，可以理解为 inline 包裹住 block，即女装大佬
-  - img、input、......
-- none 隐藏：不显示，不占空间
-- inherit：表示这个元素从父元素继承 display 属性值
-- flex/inline-flex：一维
-- grid：二维
-
-## 二、定位 —— position
-
-- static 静态定位（默认）：网页中所有的内容都倾向于往网页的左上角流动
-- relative 相对定位：相对于自己的出生点偏移【基准点默认在 border 左上角】
-- absolute 绝对定位：相对于最近的除 static 定位以外的元素进行定位，在使用时要注意设置父元素（或祖先元素）的 position 属性，若父元素（或祖先元素）都没有设置定位属性，absolute 会找到最上层即 html，相对于它进行定位了
-- fixed 固定定位：相对浏览器窗口固定
-
-  ![404](images/fixed固定定位.gif)
-
-- sticky 粘性定位：元素定位表现为在跨越特定阈值前为 relative 定位，之后为 fixed 定位。参考：http://www.runoob.com/try/try.php?filename=trycss_position_sticky
-
-  ![404](images/sticky粘性定位.gif)
-
-- inherit：继承父元素的 position 属性值
-
-```
-小技巧：
-    transform: translate(-50%, -50%);把基准点移动到盒子中心
-    解析:translate(x, y),向右x轴(0 ~ -100%),向下y轴(0 ~ -100%)
-```
-
-## 三、堆叠 —— z-index
-
-> z-index 属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
->
-> 参考：http://www.runoob.com/try/try.php?filename=trycss_zindex
-
-## 四、float —— 浮动布局【基本被淘汰】
-
-- 盒子一旦 float，这个盒子就拥有 inline-block 特性
-- 清除浮动：使用 after 伪元素
-  ```
-  .row::after {
-      content: '';
-      display: block;
-      clear: both;
-  }
-  ```
-- 栅格系统
-
-## 五、flex —— 弹性布局【一维】
+# flex —— 弹性布局【一维】
 
 > 布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。因此，Flex 布局将成为未来布局的首选方案
 >
-> ![404](images/flex布局.png)
+> ![404](images/flex布局首屏.png)
 >
 > 注意：设为 Flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效
 >
 > 参考：https://www.yuque.com/fe9/basic/tlk8ck
 
-### 1、容器属性
+## 1、容器属性
 
 ```
 .container {
@@ -84,19 +29,19 @@
 
    - row（默认）：主轴在水平方向，起点在左侧，从左到右
 
-     ![404](images/flex布局图片/flex-direction-row.png)
+     ![404](images/flex-direction-row.png)
 
    - row-reverse：主轴在水平方向，起点在右侧，从右到左
 
-     ![404](images/flex布局图片/flex-direction-row-reverse.png)
+     ![404](images/flex-direction-row-reverse.png)
 
    - column：主轴在垂直方向，起点在上沿，从上往下
 
-     ![404](images/flex布局图片/flex-direction-column.png)
+     ![404](images/flex-direction-column.png)
 
    - column-reverse: 主轴在垂直方向，起点在下沿，从下往上
 
-     ![404](images/flex布局图片/flex-direction-column-reverse.png)
+     ![404](images/flex-direction-column-reverse.png)
 
 2. flex-wrap：定义当一行放不下时，项目如何换行
 
@@ -108,15 +53,15 @@
 
    - nowrap（默认）：不换行
 
-     ![404](images/flex布局图片/flex-wrap-nowrap.png)
+     ![404](images/flex-wrap-nowrap.png)
 
    - wrap：换行，第一行在上面
 
-     ![404](images/flex布局图片/flex-wrap-wrap.png)
+     ![404](images/flex-wrap-wrap.png)
 
    - wrap-reverse：换行，第一行在下面
 
-     ![404](images/flex布局图片/flex-wrap-wrap-reverse.png)
+     ![404](images/flex-wrap-wrap-reverse.png)
 
 3. flex-flow：它是 flex-direction 和 flex-wrap 的简写，默认值是 row nowrap
 
@@ -136,23 +81,23 @@
 
    - flex-start（默认）：与主轴的起点对齐
 
-     ![404](images/flex布局图片/justify-content-flex-start.png)
+     ![404](images/justify-content-flex-start.png)
 
    - flex-end：与主轴的终点对齐
 
-     ![404](images/flex布局图片/justify-content-flex-end.png)
+     ![404](images/justify-content-flex-end.png)
 
    - center：项目居中
 
-     ![404](images/flex布局图片/justify-content-center.png)
+     ![404](images/justify-content-center.png)
 
    - space-between：两端对齐，项目之间的距离都相等
 
-     ![404](images/flex布局图片/justify-content-space-between.png)
+     ![404](images/justify-content-space-between.png)
 
    - space-around：每个项目的两侧间隔相等，所以项目与项目之间的间隔是项目与边框之间间隔的两倍
 
-     ![404](images/flex布局图片/justify-content-space-around.png)
+     ![404](images/justify-content-space-around.png)
 
 5. align-items：定义了项目在交叉轴上如何对齐
 
@@ -164,23 +109,23 @@
 
    - flex-start：与交叉轴的起点对齐(只看 1、3)
 
-     ![404](images/flex布局图片/align-items-flex-start.png)
+     ![404](images/align-items-flex-start.png)
 
    - flex-end：与交叉轴的终点对齐(只看 1、3)
 
-     ![404](images/flex布局图片/align-items-flex-end.png)
+     ![404](images/align-items-flex-end.png)
 
    - center：居中对齐(只看 1、3)
 
-     ![404](images/flex布局图片/align-items-center.png)
+     ![404](images/align-items-center.png)
 
    - baseline：项目第一行文字的基线对齐(1234 基线对齐了)
 
-     ![404](images/flex布局图片/align-items-baseline.png)
+     ![404](images/align-items-baseline.png)
 
    - stretch（默认）：如果项目未设置高度或者为 auto，项目将占满整个容器的高度
 
-     ![404](images/flex布局图片/align-items-stretch.png)
+     ![404](images/align-items-stretch.png)
 
 6. align-content：定义了多行在交叉轴方向的对齐方式。项目排列只有一行时，该属性不起作用。并且需要设置 flex-wrap: wrap，允许换行
 
@@ -192,29 +137,29 @@
 
    - flex-start：与交叉轴的起点对齐
 
-     ![404](images/flex布局图片/align-content-flex-start.png)
+     ![404](images/align-content-flex-start.png)
 
    - flex-end： 与交叉轴的终点对齐
 
-     ![404](images/flex布局图片/align-content-flex-end.png)
+     ![404](images/align-content-flex-end.png)
 
    - center：居中对齐
 
-     ![404](images/flex布局图片/align-content-center.png)
+     ![404](images/align-content-center.png)
 
    - space-bteween：与交叉轴两端对齐，轴线之间的距离相等
 
-     ![404](images/flex布局图片/align-content-space-between.png)
+     ![404](images/align-content-space-between.png)
 
    - space-around：每根轴线两侧的间隔都相等，所以轴线与轴线之间的间隔是轴线与边框之间间隔的两倍
 
-     ![404](images/flex布局图片/align-content-space-around.png)
+     ![404](images/align-content-space-around.png)
 
    - stretch（默认值）：如果 item 未设置高度或者为 auto，项目将占满整个容器的高度
 
-     ![404](images/flex布局图片/align-content-stretch.png)
+     ![404](images/align-content-stretch.png)
 
-### 2、项目属性
+## 2、项目属性
 
 1. order：定义了项目的排列顺序，默认值为 0，数值越小，排列越靠前
 
@@ -224,7 +169,7 @@
    }
    ```
 
-   ![404](images/flex布局图片/order.png)
+   ![404](images/order.png)
 
 2. flex-grow 定义了项目的放大比例，默认为 0，也就是即使存在剩余空间，也不会放大
 
@@ -234,9 +179,9 @@
    }
    ```
 
-   ![404](images/flex布局图片/flex-grow-1.png)
+   ![404](images/flex-grow-1.png)
 
-   ![404](images/flex布局图片/flex-grow-n.png)
+   ![404](images/flex-grow-n.png)
 
 3. flex-shrink：定义了项目的缩小比例（默认为 1）。项目的 flex-shrink 都为 1，当空间不足时，所有项目都将等比缩小；如果其中一个项目的 flex-shrink 为 0，其余都为 1，当空间不足时，flex-shrink 为 0 的不缩小
 
@@ -246,9 +191,9 @@
    }
    ```
 
-   ![404](images/flex布局图片/flex-shrink-1.png)
+   ![404](images/flex-shrink-1.png)
 
-   ![404](images/flex布局图片/flex-shrink-0.png)
+   ![404](images/flex-shrink-0.png)
 
 4. flex-basis：栅格系统，单位可以是像素，也可以是百分比
 
@@ -258,7 +203,7 @@
    }
    ```
 
-   ![404](images/flex布局图片/flex-basis.png)
+   ![404](images/flex-basis.png)
 
 5. flex：它是 flex-grow、flex-shrink、flex-basis 的缩写，默认值是 0 1 auto，后两个属性可选。该属性有两个快捷值：auto（1 1 auto）和 none（0 0 auto）。auto 代表在需要的时候可以拉伸也可以收缩，none 表示既不能拉伸也不能收缩
 
@@ -270,9 +215,9 @@
 
 6. align-self：定义单个项目与其他项目不一样的对齐方式，可以覆盖 align-items 属性。默认属性值是 auto，即继承父元素的 align-items 属性值。当没有父元素时，它的表现等同于 stretch
 
-   ![404](images/flex布局图片/align-self.png)
+   ![404](images/align-self.png)
 
-### 3、浏览器兼容性问题
+## 3、浏览器兼容性问题
 
 > 因为历史原因，W3C 对 flex 做了多次更新，也就导致了各浏览器支持度参差不齐
 
@@ -302,37 +247,9 @@
 备注：但如果是样式不兼容，想使用另外的一些样式，有少数情况还是需要手动自己加一些代码做渐进增强的
 ```
 
-### 小结
+## 小结
 
 - Flex 布局中容器、项目，主轴、交叉轴
 - 容器的六个属性及它们属性值的含义和用法（必学）
 - 项目的六个属性及它们属性值的含义和用法（必学）
 - Flex 布局在不同版本浏览器中的兼容性问题（兼容性检测：https://caniuse.com/ ）
-
-## 六、grid —— 网格布局【二维】
-
-## 七、文档流与非文档流
-
-- 三种脱离文档流的方式：
-  - float 浮动
-  - position：absolute
-  - position：fixed
-
-> 区别：
->
-> 1. float：使用 float 脱离文档流时，其他盒子会无视这个元素，但其他盒子内的文本依然会为这个元素让出位置，环绕在周围
-> 2. absolute 与 fixed：而对于使用 absolute 脱离文档流，其他盒子与其他盒子内的文本都会无视它【也即产生堆叠，此时需要制定 z-index 来决定显示顺序】
-
-## 八、响应式布局
-
-- 媒体查询(@media) —— “存在即覆盖，不存在则添加”
-
-```
-
-@media (max-width: 480px) {
-  background-color: lightgreen;
-}
-
-```
-
-> 参考：https://www.yuque.com/fe9/basic/hqbhn3

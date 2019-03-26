@@ -1,4 +1,23 @@
-# 阴影
+# 边框
+
+## 圆形
+
+> 我们通常会设置 border-radius 的值为宽高的一半，或者直接设置 50%的百分比来制作圆形
+
+```
+<div class="circle"></div>
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #FFB5BF;
+    border-radius: 50%;      /* 或者 50px */
+}
+```
+
+![404](images/圆形.png)
+
+## 阴影
 
 > 动画演示：https://www.html.cn/tool/css3Preview/Box-Shadow.html
 >
@@ -17,4 +36,4 @@
 - color：可选，阴影的颜色
 - inset：可选，使用该值可以将外部阴影（outset）转换成内部阴影
 
-  ![404](images/07-阴影.png)
+  ![404](images/阴影.png)
