@@ -2,11 +2,11 @@
 
 > ![404](images/grid布局一.png)
 >
-> 注意：设为网格布局以后，容器的 float、inline-block、table-cell、vertical-align 和 column-\*等都将失效
->
-> 容器 → 单元格 → 项目
+> 关系：容器 → 单元格 → 项目
 >
 > 网格线：正常情况下，n 行有 n + 1 根水平网格线，m 列有 m + 1 根垂直网格线
+>
+> 注意：设为网格布局以后，容器的 float、inline-block、table-cell、vertical-align 和 column-\*等都将失效
 >
 > 参考：http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
 
@@ -129,7 +129,7 @@ div {
     }
     ```
 
-  - 十二网格系统
+  - 12 栏网格系统
 
     ```
     .container {
@@ -138,7 +138,7 @@ div {
     }
     ```
 
-1. row-gap：行间距<br>column-gap：列间距
+2. row-gap：行间距<br>column-gap：列间距
 
    ```
    .container {
@@ -151,7 +151,7 @@ div {
    }
    ```
 
-2. grid-template-areas：网格布局允许指定"区域"（area），一个区域由单个或多个单元格组成，用于定义区域
+3. grid-template-areas：网格布局允许指定"区域"（area），一个区域由单个或多个单元格组成，用于定义区域
 
    ```
    .container {
@@ -175,7 +175,7 @@ div {
     // 上面代码中，顶部是页眉区域header，底部是页脚区域footer，中间部分则为main和sidebar
    ```
 
-3. grid-auto-flow：设置项目的放置顺序
+4. grid-auto-flow：设置项目的放置顺序
 
    ```
    grid-auto-flow: row | column | row dense | column dense;
@@ -195,7 +195,7 @@ div {
 
      ![404](images/dense填满.png)
 
-4. justify-items：单元格内的项目的水平位置，作用于所有项目<br>align-items：单元格内的项目的垂直位置，作用于所有项目
+5. justify-items：单元格内的项目的水平位置，作用于所有项目<br>align-items：单元格内的项目的垂直位置，作用于所有项目
 
    ```
    .container {
@@ -215,7 +215,7 @@ div {
    >
    > ![404](images/justify-items_start.png)
 
-5. justify-content：整个单元格集在容器里面的水平位置<br>align-content：整个单元格集在容器里面的垂直位置
+6. justify-content：整个单元格集在容器里面的水平位置<br>align-content：整个单元格集在容器里面的垂直位置
 
    ```
    .container {
@@ -232,7 +232,7 @@ div {
 
    ![404](images/justify-content_space-evenly.png)
 
-6. grid-auto-columns：设置浏览器自动创建的多余网格的列宽<br>grid-auto-rows：设置浏览器自动创建的多余网格的行高
+7. grid-auto-columns：设置浏览器自动创建的多余网格的列宽<br>grid-auto-rows：设置浏览器自动创建的多余网格的行高
 
    > 有时候，一些项目的指定位置，在现有网格的外部。比如网格只有 3 列，但是某一个项目指定在第 5 行。这时，浏览器会自动生成多余的网格，以便放置项目
 
