@@ -30,11 +30,11 @@
 - 颜色详情：Color Info
 - 浏览器调试：Debugger for Chrome
 - VS Code 主题：DuoTone Dark Themes
-- 语法校验：ESLint
+- JS 语法规则和代码风格的校验工具：ESLint
 - 编写 Markdown：Markdown All in One
 - 浏览器快捷打开：open in browser
 - 格式美化：Prettier - Code formatter
-- vue 格式检验：Vetur
+- vue 文件的基本语法高亮：Vetur
 - 文件图标：vscode-icons
 - 刷算法：LeetCode
 - 撸代码特效：Power Mode
