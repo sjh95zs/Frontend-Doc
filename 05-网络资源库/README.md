@@ -12,7 +12,7 @@
 
 - 占位图片生成器：[dummyimage](https://dummyimage.com/)
 
-- CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/)
+- CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/) | [Font Awesome（图标库）](https://fontawesome.com/)
 
 - CSS 奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/)
 
@@ -25,3 +25,5 @@
 - Google 字体大全：[Google Fonts](https://fonts.google.com/)
 
 - 前端兼容性检测：[caniuse](https://caniuse.com/)
+
+- 推荐个人博客：[阮一峰的个人网站](http://www.ruanyifeng.com/home.html)
