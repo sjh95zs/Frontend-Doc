@@ -9,4 +9,5 @@
  | Git            | 分布式版本控制系统 |
  | GitHub Desktop | Git 桌面应用程序   |
  | Chrome         | 前端首选浏览器     |
+ | Markdown语法   | md基本操作         |
  | 其他工具       | 其他实用的工具     |
