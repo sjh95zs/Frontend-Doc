@@ -11,8 +11,8 @@
 
   .container::after {
       content: '';
-      clear: both;
       display: block;
+      clear: both;
   }
   ```
 
