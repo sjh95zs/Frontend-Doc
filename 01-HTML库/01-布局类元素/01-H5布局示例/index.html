@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>H5布局示例</title>
+  </head>
+  <body>
+    <!-- 页头 -->
+    <header>
+      <div>Logo</div>
+      <!-- 导航 -->
+      <nav>
+        <a href="index.html">首页</a>
+        <a href="#">介绍</a>
+        <a href="#">链接</a>
+        <a href="#">关于</a>
+      </nav>
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>H5布局示例</title>
-</head>
+    <!-- 区域一：文章区 -->
+    <section id="s-content">
+      <!-- 目录栏 -->
+      <aside>
+        <a href="#se1">章节一</a>
+        <a href="#se2">章节二</a>
+        <a href="#se3">章节三</a>
+      </aside>
+      <!-- h1~h6标签组 -->
+      <hgroup>
+        <h1>大标题</h1>
+        <h3>副标题</h3>
+        <h5>我是一段介绍</h5>
+      </hgroup>
+      <!-- 文章 -->
+      <article>
+        章节一
+        <p id="se1">......</p>
+        章节二
+        <p id="se2">......</p>
+        章节三
+        <p id="se3">......</p>
+      </article>
+    </section>
 
-<body>
-  <!-- 页头 -->
-  <header>
-    <div>Logo</div>
-    <!-- 导航 -->
-    <nav>
-      <a href="index.html">首页</a>
-      <a href="#">介绍</a>
-      <a href="#">链接</a>
-      <a href="#">关于</a>
-    </nav>
-  </header>
+    <!-- 区域二：视频区 -->
+    <section id="s-video">
+      <!-- 一个视频 -->
+      <figure>
+        <!-- 视频标题 -->
+        <figcaption>标题：战狼2</figcaption>
+        <video src="#">我是战狼2</video>
+      </figure>
+    </section>
 
-  <!-- 区域一：文章区 -->
-  <section id="s-content">
-    <!-- 目录栏 -->
-    <aside>
-      <a href="#se1">章节一</a>
-      <a href="#se2">章节二</a>
-      <a href="#se3">章节三</a>
-    </aside>
-    <!-- h1~h6标签组 -->
-    <hgroup>
-      <h1>大标题</h1>
-      <h3>副标题</h3>
-      <h5>我是一段介绍</h5>
-    </hgroup>
-    <!-- 文章 -->
-    <article>
-      章节一
-      <p id="se1">......</p>
-      章节二
-      <p id="se2">......</p>
-      章节三
-      <p id="se3">......</p>
-    </article>
-  </section>
+    <!-- 区域三：评论区/聊天区 -->
+    <section id="s-chart">
+      <!-- 对话框1 -->
+      <dialog id="d-1">
+        <p>张三：这个文章不错</p>
+        <p>李四：这个文章不咋地</p>
+        <p>张三：你啥意思？</p>
+        <p>李四：我的意思是文章太乱了，不容易阅读</p>
+      </dialog>
+      <!-- 对话框1 -->
+      <dialog id="d-2">
+        <p>张三：......</p>
+        <p>李四：......</p>
+        <p>张三：......</p>
+        <p>李四：......</p>
+      </dialog>
+    </section>
 
-  <!-- 区域二：视频区 -->
-  <section id="s-video">
-    <!-- 一个视频 -->
-    <figure>
-      <!-- 视频标题 -->
-      <figcaption>标题：战狼2</figcaption>
-      <video src="#">我是战狼2</video>
-    </figure>
-  </section>
-
-  <!-- 区域三：评论区/聊天区 -->
-  <section id="s-chart">
-    <!-- 对话框1 -->
-    <dialog id="d-1">
-      <p>张三：这个文章不错</p>
-      <p>李四：这个文章不咋地</p>
-      <p>张三：你啥意思？</p>
-      <p>李四：我的意思是文章太乱了，不容易阅读</p>
-    </dialog>
-    <!-- 对话框1 -->
-    <dialog id="d-2">
-      <p>张三：......</p>
-      <p>李四：......</p>
-      <p>张三：......</p>
-      <p>李四：......</p>
-    </dialog>
-  </section>
-
-  <!-- 页脚 -->
-  <footer>
-    hahaha......
-  </footer>
-</body>
-
+    <!-- 页脚 -->
+    <footer>
+      hahaha......
+    </footer>
+  </body>
 </html>
