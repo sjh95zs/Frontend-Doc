@@ -2,7 +2,7 @@
 
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/)
 
-- 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/) | [CSS 查阅手册](http://css.doyoe.com/)
+- 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/) | [CSS 查阅手册](http://css.doyoe.com/) | [慕课网-Wiki 查阅手册(搭配慕课网食用)](https://wiki.imooc.com/)
 
 - 代码仓库：[GitHub](https://github.com/)
 
