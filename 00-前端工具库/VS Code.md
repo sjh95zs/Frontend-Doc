@@ -28,13 +28,26 @@
 - 标签自动更改：Auto Rename Tag
 - 简体中文翻译包：Chinese (Simpliaied) Language Pack for Visual Studio Code
 - 颜色详情：Color Info
-- 浏览器调试：Debugger for Chrome
+- 查看 HTML 的 CSS 样式：CSS Peek
 - VS Code 主题：DuoTone Dark Themes
-- JS 语法规则和代码风格的校验工具：ESLint
-- 编写 Markdown：Markdown All in One
+- HTML 兼容性格式：HTML Boilerplate
+- HTML 支持的 CSS 样式：HTML CSS Support
+- 添加 HTML 包裹标签：htmltagwrap
+- MD 语法：Markdown Preview Enhanced
 - 浏览器快捷打开：open in browser
-- 格式美化：Prettier - Code formatter
-- vue 文件的基本语法高亮：Vetur
+- 路径自动补全：Path Intellisense
+- 代码美化：Prettier - Code formatter
 - 文件图标：vscode-icons
+
+---
+
+- 快速运行:Code Runner
+- 浏览器调试：Debugger for Chrome
+- JS 语法规则和代码风格的校验工具：ESLint
+- ES6：JavaScript (ES6) code snippets
+- JS：JavaScript Snippet Pack
+- jq:jQuery Code Snippets
 - 刷算法：LeetCode
 - 撸代码特效：Power Mode
+- Sass：Sass
+- vue 文件的基本语法高亮：Vetur

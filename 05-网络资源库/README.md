@@ -6,6 +6,8 @@
 
 - 代码仓库：[GitHub](https://github.com/)
 
+- GitHub 优秀项目分享：[HelloGitHub](https://hellogithub.com/)
+
 - CDN 加速服务：[BootCDN](https://www.bootcdn.cn/)
 
 - CSS 样式重置表：[normalize](https://www.bootcdn.cn/normalize/)
@@ -14,7 +16,7 @@
 
 - CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/) | [Font Awesome（图标库）](https://fontawesome.com/)
 
-- CSS 奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/)
+- CSS 奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/) | [CSS-Inspiration](https://chokcoco.github.io/CSS-Inspiration/#/)
 
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
 
