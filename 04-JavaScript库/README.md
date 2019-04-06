@@ -1,1 +1,3 @@
-# JavaScript 开更...
+# JavaScript
+
+> JS 永远是最重要的
