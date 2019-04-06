@@ -1,11 +1,10 @@
-# 错误与调试
-
-## 错误 ——— throw、try 和 catch
+# 捕获错误
 
 - try 语句测试代码块的错误。
 - catch 语句处理错误。
 - throw 语句创建自定义错误。
 - finally 语句在 try 和 catch 语句之后，无论是否有触发异常，该语句都会执行。
+- debugger:断点与单步跟踪
 
 ```
 try {
