@@ -1,8 +1,8 @@
-# this 指向哪个对象？
+## this 指向哪个对象？
 
 根据函数的调用方式的不同，this 会指向不同的对象：
 
-1. 以普通函数的形式调用时，this 永远都是 window。比如`fun();`相当于`window.fun();`
+1. 以**普通函数的形式**调用时，this 永远都是 **window**。比如`fun();`相当于`window.fun();`
 
    ```javascript
    var name = "哈哈";
@@ -25,7 +25,7 @@
    window.fun();
    ```
 
-2. 以对象的方法的形式调用时，this 是调用方法的那个对象
+2. 以**对象的方法**的形式调用时，this 是**调用方法的那个对象**
 
    ```js
    var abs = {
@@ -41,21 +41,21 @@
    // 额额
    ```
 
-3. 以构造函数的形式调用时，this 是新创建的那个对象
+3. 以**构造函数的形式**调用时，this 是**新创建的那个对象**
 
-```js
-function fun() {
-  this.name = "嘻嘻";
-  this.hello = function() {
-    console.log(this);
-    console.log(this.name);
-  };
-}
-var xiaoming = new fun();
-xiaoming.hello();
-// fun {name: "嘻嘻", hello: ƒ}
-// 嘻嘻
-```
+   ```js
+   function fun() {
+     this.name = "嘻嘻";
+     this.hello = function() {
+       console.log(this);
+       console.log(this.name);
+     };
+   }
+   var xiaoming = new fun();
+   xiaoming.hello();
+   // xiaoming
+   // 嘻嘻
+   ```
 
 4. call、apply、bind 可以改变 this 的指向
 
@@ -78,47 +78,8 @@ xiaoming.hello();
    yo2("王大锤", 1, 2);
    ```
 
-```
-"use strict"; // 严格模式js
-var person = {
-  firstName: "王",
-  lastName: "花花",
-  fullName: function() {
-    console.log(this); // 打印this看看是啥
-    return this.firstName + this.lastName;
-  }
-};
-// 情况一：此时的this等于undefined(严格模式时)/window(一般模式时)，且严格模式下会报错
-var get_fullName = person.fullName;
-console.log(get_fullName());
-// 情况二：此时的this等于其上一级对象person
-console.log(person.fullName());
-
-// 情况三：此时的this等于即将生成的对象，这里指whh
-function User() {
-  this.name = "王花花";
-  this.age = 18;
-}
-var whh = new User();
-console.log(whh);
-```
+5. **箭头函数**中 this 的指向：ES6 中的箭头函数并不会使用上面四条标准的绑定规则，而是会**继承外层函数调用的 this 绑定**（无论 this 绑定到什么）
 
 ## this 好处是啥？
 
-```
-function yo() {
-  console.log("yo,我是：" + this.name); // 此处的this等于whh或lsd
-}
-
-var whh = {
-  name: "以前我叫王花花，现在我叫黄花花"
-};
-var lsd = {
-  name: "李栓蛋"
-};
-whh.yo = yo; // 把yo函数添加到whh这个对象内，成为它的元素
-lsd.yo = yo;
-whh.yo(); // 调用yo函数，完整写法是 whh.yo.call();
-lsd.yo();
-// 好处：whh或lsd的name改变了，yo函数的输出结果也会跟着改变，非常动态
-```
+非常动态

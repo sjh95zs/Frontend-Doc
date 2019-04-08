@@ -1,5 +1,7 @@
 ## 对象初识
 
+对象的作用：封装信息
+
 - JS 对象是一组由 key-value 组成的无序集合，key 又称为该对象的属性，value 称为属性值
 
   ```js
@@ -10,25 +12,86 @@
       height: 1.70,
       weight: 65,
       score: null
-      'middle-school': 'No.1 Middle School'
+      'middle school': 'No.1 Middle School'
   };
 
   xiaohong['name']; // '小红'
   xiaohong.name; // '小红'
   ```
 
-- JS 对象的 key 都是字符串类型，value 可以是任意数据类型（对象、函数都行）
+- JS 对象的 key 都是字符串类型，value 可以是任意数据类型
 
 - 本质上，所有的对象都是通过构造函数创建的
+  `var obj = {}; ==>var obj = new Object();`
 
 ## 对象的分类
 
 - 自定义对象：开发人员自己创建的对象
-- 原生对象：ES 标准定义的对象，如 String、Number、Boolean、Function、Object......
-  - 内置对象：只有 Math 和 Global，**它们也是原生对象**，默认已经实例化
+- 内置对象：ES 标准定义的对象，如 Math、String、Number、Boolean、Global、Function、Object......
 - 宿主对象：浏览器提供的对象
   - DOM
   - BOM
+
+## 创建自定义对象的三种方法
+
+### 方式一：字面量
+
+```js
+var abc = {
+  name: "斌桑",
+  age: 24,
+  isBoy: true,
+  sayHi: function() {
+    console.log(this.name); // this指向的是abc这个对象
+  }
+};
+```
+
+### 方式二：工厂模式
+
+```js
+function createPerson(name, age, gender) {
+  //创建一个新的对象
+  var obj = {};
+  //向对象中添加属性
+  obj.name = name;
+  obj.age = age;
+  obj.gender = gender;
+  obj.sayName = function() {
+    alert(this.name);
+  };
+  //将新的对象返回
+  return obj;
+}
+
+var ZBJ = createPerson("猪八戒", 28, "男");
+var BGJ = createPerson("白骨精", 16, "女");
+var ZZJ = createPerson("蜘蛛精", 18, "女");
+```
+
+### 方式三：构造函数
+
+```js
+function Student(name) {
+  this.name = name; //this指的是构造函数中的对象实例，这里是zhangsan和lisi
+  this.sayHi = function() {
+    console.log(this.name + "厉害了");
+    console.log(this);
+  };
+}
+
+//利用构造函数自定义对象
+var zhangsan = new Student("zhangsan");
+var lisi = new Student("lisi");
+```
+
+> 普通函数和构造函数区别：调用方式不同 ；this 的指向不同；构造函数的 this 会先变成一个空对象，且默认 return this
+
+## JS 的垃圾回收（GC）机制
+
+如果堆内存中的对象，没有任何变量指向它时，这个堆内存里的对象就会成为垃圾。
+
+JS 拥有自动的垃圾回收机制，会自动将这些垃圾对象从内存中销毁。我们不需要也不能进行垃圾回收的操作。我们仅仅需要做的是：如果你不再使用该对象，那么，将改对象的引用设置为 null 即可。
 
 ## 补充：遍历对象中的属性 for in
 
@@ -46,3 +109,13 @@ for (var n in obj) {
   console.log("属性值:" + obj[n]);
 }
 ```
+
+## 面向对象
+
+### 类和实例是大多数面向对象编程语言的基本概念
+
+1. 类：类是对象的类型模板，例如，定义 Student 类来表示学生，类本身是一种类型，Student 表示学生类型，但不表示任何具体的某个学生；
+
+2. 实例：实例是根据类创建的对象，例如，根据 Student 类可以创建出 xiaoming、xiaohong、xiaojun 等多个实例，每个实例表示一个具体的学生，他们全都属于 Student 类型。
+
+### JavaScript 不区分类和实例的概念，而是通过原型（prototype）来实现面向对象编程
