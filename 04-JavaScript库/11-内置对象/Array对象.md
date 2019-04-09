@@ -309,11 +309,110 @@ console.log("result =" + JSON.stringify(result)); // result =["f","e","d","c","b
 
 ### 三、其他方法
 
-| 方法                             | 功能                                                  | 备注 |
-| :------------------------------- | :---------------------------------------------------- | :--- |
-| indexOf(value)                   | 从前往后索引，获取 value 在数组中的第一个下标         |      |
-| lastIndexOf(value)               | 从后往前索引，获取 value 在数组中的最后一个下标       |      |
-| find(function())                 | 找出**第一个**满足「指定条件返回 true」的元素。       |      |
-| findIndex(function())            | 找出**第一个**满足「指定条件返回 true」的元素的 index |      |
-| Array.from(arrayLike)            | 将**伪数组**转化为**真数组**                          |      |
-| Array.of(value1, value2, value3) | 将**一系列值**转换成数组。                            |      |
+| 方法                             | 功能                                                  |
+| :------------------------------- | :---------------------------------------------------- |
+| indexOf(value)                   | 从前往后索引，获取 value 在数组中的第一个下标         |
+| lastIndexOf(value)               | 从后往前索引，获取 value 在数组中的最后一个下标       |
+| find(function())                 | 找出**第一个**满足「指定条件返回 true」的元素。       |
+| findIndex(function())            | 找出**第一个**满足「指定条件返回 true」的元素的 index |
+| Array.from(arrayLike)            | 将**伪数组**转化为**真数组**                          |
+| Array.of(value1, value2, value3) | 将**一系列值**转换成数组。                            |
+
+1.indexOf() 和 lastIndexOf()：获取数据的索引
+
+语法：
+
+```js
+索引值 = 数组.indexOf(value);
+
+索引值 = 数组.lastIndexOf(value);
+```
+
+```js
+var arr = ["a", "b", "c", "d", "e", "d", "c"];
+
+console.log(arr.indexOf("c")); // 2
+console.log(arr.lastIndexOf("d")); // 5
+```
+
+2.find()
+
+语法：
+
+```js
+arr.find(function(item, index) {
+  return true;
+});
+```
+
+```js
+let arr = [2, 3, 2, 5, 7, 6];
+
+let result = arr.find(function(item, index) {
+  return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素返回
+});
+
+console.log(result); //打印结果：5
+```
+
+3.findIndex()
+
+语法：
+
+```js
+arr.findIndex(function(item, index) {
+  return true;
+});
+```
+
+```js
+let arr = [2, 3, 2, 5, 7, 6];
+
+let result = arr.findIndex(function(item, index) {
+  return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素的index返回
+});
+
+console.log(result); //打印结果：3
+```
+
+4.Array.from()
+
+语法：
+
+```js
+arr = Array.from(arrayLike);
+```
+
+5.Array.of()
+
+语法：
+
+```js
+Array.of(value1, value2, value3);
+```
+
+```js
+let arr = Array.of(1, "abc", true);
+
+console.log(arr); // [1, "abc", true]
+```
+
+### 四、补充
+
+1.Array.isArray()：判断是否为数组
+
+```js
+布尔值 = Array.isArray(被检测的值);
+```
+
+以前，我们会通过 `A instanceof B`来判断 A 是否属于 B 类型。但是在数组里，这种 instanceof 方法已经用的不多了，因为有 Array.isArray()方法
+
+2.清空数组
+三种方式：
+```js
+var array = [1, 2, 3, 4, 5, 6];
+
+array.splice(0); // 方式1：删除数组中所有项目
+array.length = 0; // 方式2：length属性可以赋值，在其它语言中length是只读
+array = []; // 方式3：推荐
+```
