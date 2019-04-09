@@ -8,15 +8,10 @@
   </head>
   <body>
     <script>
-      function fun() {
-        this.name = "嘻嘻";
-        this.hello = function() {
-          console.log(this);
-          console.log(this.name);
-        };
-      }
-      var xiaoming = new fun();
-      xiaoming.hello();
+      var a = [1, 2, 3];
+      a[9] = 4;
+      console.log(a.length); // 10
+      console.log(JSON.stringify(a)); // [1,2,3,null,null,null,null,null,null,4]
     </script>
   </body>
 </html>
