@@ -394,7 +394,7 @@ Array.of(value1, value2, value3);
 ```js
 let arr = Array.of(1, "abc", true);
 
-console.log(arr); // [1, "abc", true]
+console.log(arr); // 结果：[1, "abc", true]
 ```
 
 ### 四、补充
@@ -408,7 +408,7 @@ console.log(arr); // [1, "abc", true]
 以前，我们会通过 `A instanceof B`来判断 A 是否属于 B 类型。但是在数组里，这种 instanceof 方法已经用的不多了，因为有 Array.isArray()方法
 
 2.清空数组
-三种方式：
+
 ```js
 var array = [1, 2, 3, 4, 5, 6];
 
