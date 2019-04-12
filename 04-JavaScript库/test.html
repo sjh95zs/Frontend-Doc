@@ -7,46 +7,6 @@
     <title>Document</title>
   </head>
   <body>
-    <ul id="list">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
-
-    <button id="add">插入</button>
-    <button id="replace">替换</button>
-    <button id="remove">删除</button>
-
-    <script>
-      var list = document.getElementById("list");
-      var add = document.querySelector("#add");
-      var replace = document.querySelector("#replace");
-      var remove = document.querySelector("#remove");
-
-      var li = document.createElement("li");
-      li.innerHTML = "hello";
-
-      function addNode() {
-        //尾插
-        //list.appendChild(li)
-        //任意位置插
-        list.insertBefore(li, list.childNodes[2]);
-      }
-      function replaceNode() {
-        //替换任意位置,要替换第一个或者最后一个只需将第二个参数改为list.firstChild / lastChild
-        list.replaceChild(li, list.childNodes[1]);
-      }
-      function removeNode() {
-        //移除首/尾元素
-        //list.removeChild(list.firstChild)
-        // list.removeChild(list.lastChild)
-        //移除任意位置上的元素
-        list.removeChild(list.childNodes[1]);
-      }
-
-      add.addEventListener("click", addNode);
-      replace.addEventListener("click", replaceNode);
-      remove.addEventListener("click", removeNode);
-    </script>
+    <script></script>
   </body>
 </html>
