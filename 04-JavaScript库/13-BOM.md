@@ -6,7 +6,12 @@
 
 所有的全局变量和全局方法，都归于 window 对象上
 
-### 方法
+### 1.1、属性
+
+- `window.innerWidth`：获取**文档显示区**的宽度
+- `window.innerHeight`：获取**文档显示区**的高度
+
+### 1.2、方法
 
 - alert：显示带有一段消息和一个确定按钮的警告框
 - confirm：显示一个带有指定信息、确定和取消按钮的对话框，返回布尔值
@@ -119,3 +124,45 @@
 ## 3、history 对象
 
 > 保存了用户访问页面的历史记录
+
+### 方法
+
+- `history.back();`：回到历史记录的上一步，等同 `history.go(-1);`，也即浏览器的回退按钮
+
+- `history.forward();`：回到历史记录的下一步，等同 `history.go(1);`，也即浏览器的前进按钮
+
+- `history.go();`：历史记录的前后跳转，-n 步或+n 步
+
+## 4、screen 对象
+
+### 属性
+
+- `screen.availWidth`：返回可用的**显示屏幕**宽度
+- `screen.availHeight`：返回可用的**显示屏幕**高度
+
+## 5、navigator 对象
+
+### 属性
+
+- `navigator.userAgent`：获取浏览器名称、版本、引擎、操作系统信息等内容
+
+  ```js
+  // 应用：判断浏览器类型
+
+  function getBrowser() {
+    var explorer = navigator.userAgent,
+      browser;
+    if (explorer.indexOf("MSIE") > -1) {
+      browser = "IE";
+    } else if (explorer.indexOf("Chrome") > -1) {
+      browser = "Chrome";
+    } else if (explorer.indexOf("Opera") > -1) {
+      browser = "Opera";
+    } else if (explorer.indexOf("Safari") > -1) {
+      browser = "Safari";
+    }
+    return browser;
+  }
+  var browser = getBrowser();
+  console.log("您当前使用的浏览器是：" + browser);
+  ```

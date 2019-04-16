@@ -7,11 +7,25 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="https://www.baidu.com/">跳转</a>
     <script>
-      var a = function() {
-        location.replace("https://www.baidu.com/");
-      };
-      setTimeout(a, 2000);
+      // 判断浏览器类型
+      function getBrowser() {
+        var explorer = navigator.userAgent,
+          browser;
+        if (explorer.indexOf("MSIE") > -1) {
+          browser = "IE";
+        } else if (explorer.indexOf("Chrome") > -1) {
+          browser = "Chrome";
+        } else if (explorer.indexOf("Opera") > -1) {
+          browser = "Opera";
+        } else if (explorer.indexOf("Safari") > -1) {
+          browser = "Safari";
+        }
+        return browser;
+      }
+      var browser = getBrowser();
+      console.log("您当前使用的浏览器是：" + browser);
     </script>
   </body>
 </html>
