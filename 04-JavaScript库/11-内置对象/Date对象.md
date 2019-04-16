@@ -1,6 +1,6 @@
-## Date 对象
+# Date 对象
 
-### Date 方法
+## 1、Date 方法
 
 1. Date 对象的创建
 
