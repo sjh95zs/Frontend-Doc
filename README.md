@@ -12,7 +12,7 @@
 | 02-CSS 与 CSS3   | CSS + CSS3                         |
 | 03-CSS 框架      | 开发效率极大提高，需要时看官方 Doc |
 | 04-JavaScript 库 | JavaScript 库                      |
-| 05-实战          | HTML+CSS+JS+PS 切图                |
+| 05-实战          | 综合应用：HTML+CSS+JS+PS 切图      |
 | 06-网络资源库    | 本人筛选过的优质网站               |
 
 ## 前端知识体系
