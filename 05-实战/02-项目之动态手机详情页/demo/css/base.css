@@ -1,0 +1,21 @@
+/* 公共样式表 */
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "Microsoft Yahei", 微软雅黑;
+  /* box-sizing: border-box; */
+}
+
+a {
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
