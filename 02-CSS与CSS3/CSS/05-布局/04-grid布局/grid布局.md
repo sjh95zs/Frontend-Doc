@@ -1,4 +1,4 @@
-# grid —— 网格布局【二维，远比 Flex 布局强大】
+# grid —— 网格布局（二维，远比 Flex 布局强大）
 
 > ![404](images/grid布局一.png)
 >

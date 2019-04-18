@@ -1,4 +1,6 @@
-# 布局实例
+# 布局 demo
+
+- 行布局
 
 - 两栏布局 —— 一边宽度固定，另一边自适应
 
@@ -6,7 +8,7 @@
 
   - 圣杯法（参考：https://www.yuque.com/fe9/basic/ecdg1z ）
   - 双飞翼法（参考：https://www.yuque.com/fe9/basic/ecdg1z ）
-  - flex 布局（推荐使用，参考：http://www.ruanyifeng.com/blog/2015/07/flex-examples.html ）
+  - flex 布局法（推荐使用，参考：http://www.ruanyifeng.com/blog/2015/07/flex-examples.html ）
 
     ```
     <style>
@@ -46,3 +48,5 @@
       <div class="right">right</div>
     </div>
     ```
+
+- 混合布局
