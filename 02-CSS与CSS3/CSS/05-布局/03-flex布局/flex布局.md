@@ -253,3 +253,5 @@
 - 容器的六个属性及它们属性值的含义和用法（必学）
 - 项目的六个属性及它们属性值的含义和用法（必学）
 - Flex 布局在不同版本浏览器中的兼容性问题（兼容性检测：https://caniuse.com/ ）
+
+> 动画演示地址：https://www.html.cn/demo/flexbox-playground/
