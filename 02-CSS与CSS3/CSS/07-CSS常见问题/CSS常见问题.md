@@ -1,71 +1,115 @@
 # CSS 常见问题
 
-## 居中问题
+## 1、居中问题
 
-> 这里的居中，指的是子元素相对于父元素的居中
+- **文本水平居中**：`text-align: center;`
 
-- 使用 text-align：center —— 该方法可以让元素的**文本内容水平居中**
-
+  ```html
+  <div class="item">
+    我水平居中了
+  </div>
   ```
-  <div class="item">我居中了</div>
 
+  ```css
   .item {
     text-align: center;
   }
   ```
 
-- 垂直居中：这个方法只能将**单行文本垂直居中**。只需要简单地把 line-height 设置为那个父容器的 height 值就可以使文本垂直居中了
+- **单行文本垂直居中**：line-height 等于容器的 height 值，**多行文本无效**
 
-  ```
-  <div id="content">
-    Content here
+  ```html
+  <div class="item">
+    我垂直居中了
   </div>
+  ```
 
-  #content {
+  ```css
+  .item {
     height: 100px;
     line-height: 100px;
   }
   ```
 
-- 设置 margin：0 auto —— 该方法能**让自己水平居中**(注意：是盒子居中，不是文本)，但是对浮动元素和绝对定位的元素无效
+- **多行文本垂直居中**：暂定...
 
-  - **注意**：使用这个方法自己的宽度需要确定，如果不设置自己的宽度，默认是占父元素的 100%，将不会起作用
+- **块级元素水平居中**于父元素：`margin: 0 auto;`或`负边距法`，**非块级元素无效**
 
-  ```
-  <div class="container">
-    <div class="item">你好</div>
-  </div>
-
-  .item {
-    margin: auto;
-    width: 300px || 60%;
-  }
-  ```
-
-- 绝对定位实现居中
-
-  ```
+  ```html
   <div class="container">
     <div class="item"></div>
   </div>
+  ```
 
+  ```css
+  // 法一
+  .item {
+    width: 1200px; /* 宽度一定得有，否则居中失效 */
+    margin: 0 auto;
+  }
+
+  // 法二：负边距法
+  .item {
+    width: 100px; /* 宽度一定得有，否则居中失效 */
+    left: 50%;
+    margin-left: -50px; /* width的一半，且为负 */
+  }
+  ```
+
+- **元素垂直居中**于父元素
+
+  ```html
+  <div class="container">
+    <div class="item"></div>
+  </div>
+  ```
+
+  ```css
   .container {
     position: relative;
   }
+
   .item {
-    position: absolute;
-    transform: translate(-50%, -50%);
+    height: 40px;
+    position: absolute; /* 绝对定位，脱离文档流 */
+    top: 50%;
+    margin-top: -20px; /* height的一半 */
+  }
+  ```
+
+- **水平与垂直居中**：绝对定位
+
+  ```html
+  <div class="container">
+    <div class="item"></div>
+  </div>
+  ```
+
+  ```css
+  .container {
+    position: relative;
+  }
+
+  .item {
+    position: absolute; /* 绝对定位，脱离文档流 */
+    transform: translate(-50%, -50%); /* 把基准点移到盒子中心 */
     left: 50%;
     top: 50%;
   }
   ```
 
-- 使用 Flex 布局
+- **水平与垂直居中**：Flex 布局
 
+  ```html
+  <div class="container">
+    <div class="item"></div>
+  </div>
   ```
+
+  ```css
   .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
   }
   ```
