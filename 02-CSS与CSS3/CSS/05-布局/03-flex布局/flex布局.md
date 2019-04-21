@@ -6,6 +6,8 @@
 >
 > 注意：设为 Flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效
 >
+> 动画演示地址：https://www.html.cn/demo/flexbox-playground/
+>
 > 参考：https://www.yuque.com/fe9/basic/tlk8ck | http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
 
 ## 1、容器属性
@@ -253,5 +255,3 @@
 - 容器的六个属性及它们属性值的含义和用法（必学）
 - 项目的六个属性及它们属性值的含义和用法（必学）
 - Flex 布局在不同版本浏览器中的兼容性问题（兼容性检测：https://caniuse.com/ ）
-
-> 动画演示地址：https://www.html.cn/demo/flexbox-playground/

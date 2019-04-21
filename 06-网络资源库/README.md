@@ -2,7 +2,7 @@
 
 - 入门网站：[表严肃](https://biaoyansu.com/i/6593029482131) | [宁皓网](https://ninghao.net/)
 
-- 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/) | [CSS 查阅手册](http://css.doyoe.com/) | [慕课网-Wiki 查阅手册(搭配慕课网食用)](https://wiki.imooc.com/)
+- 查漏补缺：[MDN](https://developer.mozilla.org/zh-CN/) | [菜鸟教程](http://www.runoob.com/) | [前端九部 · 语雀](https://www.yuque.com/fe9) | [极客时间](https://time.geekbang.org/) | [CSS 查阅手册](http://css.doyoe.com/) | [小火柴的前端小册子](https://xiaohuochai.site/)
 
 - 代码仓库：[GitHub](https://github.com/)
 
@@ -14,7 +14,8 @@
 
 - 占位图片生成器：[dummyimage](https://dummyimage.com/)
 
-- CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/) | [Font Awesome（图标库）](https://fontawesome.com/)
+- CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/) | [Font Awesome（图标库）](https://fontawesome.com/) | [Animate.css（CSS3 动画库）
+  ](https://daneden.github.io/animate.css/)
 
 - CSS 奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/) | [CSS-Inspiration](https://chokcoco.github.io/CSS-Inspiration/#/)
 
@@ -24,7 +25,7 @@
 
 - 前端新闻资讯：[InfoQ](https://www.infoq.cn/) | [掘金](https://juejin.im/)
 
-- Google 字体大全：[Google Fonts](https://fonts.google.com/)
+- 字体大全：[Google Fonts](https://fonts.google.com/) | [fontsquirrel（字体格式转换工具）](https://www.fontsquirrel.com/tools/webfont-generator)
 
 - 前端兼容性检测：[caniuse](https://caniuse.com/)
 
