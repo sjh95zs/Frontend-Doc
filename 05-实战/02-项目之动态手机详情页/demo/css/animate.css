@@ -68,7 +68,7 @@
 .screen-2__phone_animate_done {
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: opacity, transform 1.5s;
+  transition: opacity, transform 1s;
 }
 
 .screen-2__point_i_1_animate_init {
@@ -80,12 +80,20 @@
   opacity: 0;
   transform: translate(100%, 0);
 }
-.screen-2__point_i_1_animate_done,
-.screen-2__point_i_2_animate_done,
-.screen-2__point_i_3_animate_done {
+.screen-2__point_i_1_animate_done {
   opacity: 1;
   transform: translate(0, 0);
   transition: opacity, transform 1s 1s;
+}
+.screen-2__point_i_2_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity, transform 1s 2s;
+}
+.screen-2__point_i_3_animate_done {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity, transform 1s 3s;
 }
 
 /* 动画帧 */
