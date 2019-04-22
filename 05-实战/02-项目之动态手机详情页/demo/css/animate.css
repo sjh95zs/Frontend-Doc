@@ -9,7 +9,7 @@
 
 /*导航条样式变动*/
 .header {
-  transition: all 1s;
+  transition: all 1.5s;
 }
 .header_status_black {
   background: rgba(0, 0, 0, 0.5);
@@ -21,13 +21,9 @@
 }
 .header_status_black .header__nav__item,
 .header_status_black .header__logo {
-  color: #fff;
-}
-.header_status_black .header__nav__item_status_active {
-  color: red;
+  color: #ffffff;
 }
 .header_status_black .header__nav__item:hover {
-  transition: all 1s;
   color: red;
 }
 

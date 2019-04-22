@@ -1,21 +1,31 @@
-// 获取元素
-
+/* 先把基本常用的函数封装一下 */
+// 1、获取元素
 var getElem = function(selector) {
   return document.querySelector(selector);
 };
 var getAllElem = function(selector) {
   return document.querySelectorAll(selector);
 };
-// 获取元素的样式
+
+// 2、获取元素的class属性
 var getCls = function(element) {
   return element.getAttribute("class");
 };
-// 设置元素的样式
+
+// 3、设置元素的class属性（直接覆盖原本class类）
+/* 
+  element：元素原本类名
+  cls：需设置的新类名
+*/
 var setCls = function(element, cls) {
   return element.setAttribute("class", cls);
 };
 
-// 为元素添加样式
+// 4、为元素添加class属性（往后面添加class类）
+/* 
+  element：元素原本类名
+  cls：需添加的类名
+*/
 var addCls = function(element, cls) {
   var baseCls = getCls(element);
   if (baseCls.indexOf(cls) === -1) {
@@ -23,7 +33,12 @@ var addCls = function(element, cls) {
   }
   return;
 };
-// 为元素删减样式
+
+// 5、删减元素的class属性
+/* 
+  element：元素原本类名
+  cls：需删减的类名
+*/
 var delCls = function(element, cls) {
   var baseCls = getCls(element);
   if (baseCls.indexOf(cls) > -1) {
@@ -39,6 +54,7 @@ var delCls = function(element, cls) {
   return;
 };
 
+/* 开始写JS脚本 */
 var screenAnimateElements = {
   ".screen-1": [".screen-1__heading", ".screen-1__phone", ".screen-1__shadow"],
   ".screen-2": [
@@ -65,6 +81,8 @@ var screenAnimateElements = {
   ],
   ".screen-5": [".screen-5__heading", ".screen-5__subheading", ".screen-5__bg"]
 };
+
+// 第一步：为所有元素设置初始样式init
 function setScreenAnimateInit(screenCls) {
   var screen = document.querySelector(screenCls); // 获取当前屏的元素
   var animateElements = screenAnimateElements[screenCls]; // 需要设置动画的元素
@@ -77,19 +95,13 @@ function setScreenAnimateInit(screenCls) {
     );
   }
 }
-
-// 第一步：初始化设置
 window.onload = function() {
-  //  为所有元素设置 init
   for (k in screenAnimateElements) {
-    if (k == ".screen-1") {
-      continue;
-    }
     setScreenAnimateInit(k);
   }
-  console.log("onload");
 };
-// 第二步：滚动条设置
+
+// 第二步：滚动条触发，init→done
 function playScreenAnimateDone(screenCls) {
   var screen = document.querySelector(screenCls); // 获取当前屏的元素
   var animateElements = screenAnimateElements[screenCls]; // 需要设置动画的元素
@@ -102,109 +114,60 @@ function playScreenAnimateDone(screenCls) {
     );
   }
 }
-//  第二步附加：初始化第一屏的动画（1. skipScreenAnimateInit 2.跳过 init ）
 
+// 第一屏延迟0.1s直接触发，无需滚动条触发
 setTimeout(function() {
   playScreenAnimateDone(".screen-1");
 }, 100);
 
-var navItems = getAllElem(".header__nav-item");
-var outLineItems = getAllElem(".outline__item");
-
-var switchNavItemsActive = function(idx) {
-  for (var i = 0; i < navItems.length; i++) {
-    console.log(navItems[i]);
-    delCls(navItems[i], "header__nav-item_status_active");
-    navTip.style.left = 0 + "px";
-  }
-  addCls(navItems[idx], "header__nav-item_status_active");
-  navTip.style.left = idx * 70 + "px";
-
-  for (var i = 0; i < outLineItems.length; i++) {
-    delCls(outLineItems[i], "outline__item_status_active");
-  }
-  addCls(outLineItems[idx], "outline__item_status_active");
-};
-
+// 滚动条触发
 window.onscroll = function() {
-  var top = document.body.scrollTop;
+  /* 获取滚动条的滚动值 */
+  var top = document.documentElement.scrollTop;
 
-  //   2.1 导航条样式变动
-  if (top > 100) {
+  // 滚动条触发导航栏
+  if (top > 80) {
     addCls(getElem(".header"), "header_status_black");
   } else {
     delCls(getElem(".header"), "header_status_black");
-
-    switchNavItemsActive(0); // 后面添加的，不需要立刻
   }
-
-  if (top > 800 * 1) {
+  // 滚动条触发侧边栏
+  if (top > 600) {
     addCls(getElem(".outline"), "outline_status_in");
+  } else {
+    delCls(getElem(".outline"), "outline_status_in");
   }
-  // }else{
-  //     delCls( getElem('.outline'),'outline_status_in' );
-  // }
 
+  // 滚动条触发第2~5屏
   if (top > 800 * 1 - 100) {
     playScreenAnimateDone(".screen-2");
-
-    switchNavItemsActive(1); // 后面添加的，不需要立刻
   }
   if (top > 800 * 2 - 100) {
     playScreenAnimateDone(".screen-3");
-    switchNavItemsActive(2);
   }
   if (top > 800 * 3 - 100) {
     playScreenAnimateDone(".screen-4");
-    switchNavItemsActive(3);
   }
   if (top > 800 * 4 - 100) {
     playScreenAnimateDone(".screen-5");
-    switchNavItemsActive(4);
   }
 };
 
-//  第三步 导航条双向定位
-
-// 3.1 导航条 - 点击页面跳转
-
+// 第三步：点击跳转
 var setNavJump = function(i, lib) {
   var elem = lib[i];
   elem.onclick = function() {
-    document.body.scrollTop = i * 800 + 1;
+    document.documentElement.scrollTop = i * 800;
   };
 };
 
+// 导航条-点击页面跳转
+var navItems = getAllElem(".header__nav__item");
 for (var i = 0; i < navItems.length; i++) {
   setNavJump(i, navItems);
 }
-// 3.2  大纲-点击跳转
-
+// 侧边栏-点击跳转
+var outLineItems = getAllElem(".outline__item");
 for (var i = 0; i < outLineItems.length; i++) {
   setNavJump(i, outLineItems);
-}
-// 3.3 双向绑定，回到 onscrollTop（移动 navIntes、outLineItems到顶固）、增加 clear 样式 函数
-
-// 滑动门
-var navTip = getElem(".header__nav-tip");
-var setTip = function(idx, lib) {
-  lib[idx].onmouseover = function() {
-    console.log(this, idx);
-    navTip.style.left = idx * 70 + "px";
-  };
-  var currentIdx = 0;
-  lib[idx].onmouseout = function() {
-    console.log(currentIdx);
-    for (var i = 0; i < lib.length; i++) {
-      if (getCls(lib[i]).indexOf("header__nav-item_status_active") > -1) {
-        currentIdx = i;
-        break;
-      }
-    }
-    navTip.style.left = currentIdx * 70 + "px";
-  };
-};
-
-for (var i = 0; i < navItems.length; i++) {
-  setTip(i, navItems);
 }
