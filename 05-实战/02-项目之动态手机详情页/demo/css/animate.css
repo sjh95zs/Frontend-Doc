@@ -4,6 +4,40 @@
     过程：触发，初始→最终的动画效果
 */
 
+/*导航条样式变动*/
+.header {
+  transition: all 1s;
+}
+.header_status_black {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 3;
+}
+.header_status_black .header__nav-item,
+.header_status_black .header__logo {
+  color: #fff;
+}
+.header_status_black .header__nav-item_status_active {
+  color: red;
+}
+.header_status_black .header__nav-item:hover {
+  transition: all 1s;
+  color: red;
+}
+
+/* 侧边栏 */
+.outline {
+  transition: all 1s;
+}
+
+.outline_status_in {
+  right: 0px;
+  transition: all 1s;
+}
+
 /*第一屏动画*/
 .screen-1__heading_animate_init {
   opacity: 0;
@@ -63,6 +97,36 @@
   transition: all 1s 1s;
 }
 
+/* 动画帧 */
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.screen-2__point:before,
+.screen-2__point:after {
+  content: " ";
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 2px;
+  left: 0.9px;
+  background-color: rgba(255, 0, 0, 0.4);
+  border-radius: 50%;
+  animation: bounce 4s infinite;
+}
+.screen-2__point_i_1:before,
+.screen-2__point_i_1:after {
+  left: 185px;
+}
+
 /* 第三屏动画 */
 .screen-3__heading_animate_init {
   opacity: 0;
@@ -101,31 +165,19 @@
 }
 
 /*第四屏动画*/
-.screen-4__subheading,
-.screen-4__heading {
-  transition: all 1s;
-}
-
 .screen-4__heading_animate_init {
   opacity: 0;
-  transform: translate(0, -100%);
+  transform: translate(-50%, -100%);
 }
 .screen-4__subheading_animate_init {
   opacity: 0;
-  transform: translate(0, 100%);
+  transform: translate(-50%, 100%);
 }
-
-.screen-4__type__item_i_1 {
-  transition: all 1s 0.5s;
-}
-.screen-4__type__item_i_2 {
-  transition: all 1s 1s;
-}
-.screen-4__type__item_i_3 {
-  transition: all 1s 1.5s;
-}
-.screen-4__type__item_i_4 {
-  transition: all 1s 2s;
+.screen-4__heading_animate_done,
+.screen-4__subheading_animate_done {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: all 1s;
 }
 
 .screen-4__type__item_i_1_animate_init,
@@ -134,97 +186,37 @@
 .screen-4__type__item_i_4_animate_init {
   opacity: 0;
 }
-
-.screen-4__type__item_i_1_animate_done,
-.screen-4__type__item_i_2_animate_done,
-.screen-4__type__item_i_3_animate_done,
+.screen-4__type__item_i_1_animate_done {
+  opacity: 1;
+  transition: all 2s 1s;
+}
+.screen-4__type__item_i_2_animate_done {
+  opacity: 1;
+  transition: all 2s 1.5s;
+}
+.screen-4__type__item_i_3_animate_done {
+  opacity: 1;
+  transition: all 2s 2s;
+}
 .screen-4__type__item_i_4_animate_done {
   opacity: 1;
+  transition: all 2s 2.5s;
 }
 
 /*第5屏动画*/
-
-.screen-5__bg,
-.screen-5__subheading,
-.screen-5__heading {
-  transition: all 1s;
-}
 .screen-5__heading_animate_init {
   opacity: 0;
-  transform: translate(0, -100%);
+  transform: translate(-50%, -100%);
 }
 .screen-5__bg_animate_init,
 .screen-5__subheading_animate_init {
   opacity: 0;
-  transform: translate(0, 100%);
+  transform: translate(-50%, 100%);
 }
-
-/*定义帧动画*/
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-/*使用帧动画*/
-.screen-2__point:before,
-.screen-2__point:after {
-  content: " ";
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 1px;
-  left: 0px;
-  background-color: rgba(255, 0, 0, 0.4);
-  border-radius: 50%;
-  animation: bounce 2s infinite;
-}
-
-.screen-2__point:before {
-  animation: bounce 2s infinite 1s;
-}
-.screen-2__point_i_1:after,
-.screen-2__point_i_1:before {
-  left: 200px;
-}
-
-/*导航条样式变动*/
-.header {
-  transition: all 1s;
-}
-.header_status_black {
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 3;
-}
-.header_status_black .header__nav-item,
-.header_status_black .header__logo {
-  color: #fff;
-}
-.header_status_black .header__nav-item_status_active {
-  color: red;
-}
-.header_status_black .header__nav-item:hover {
-  transition: all 1s;
-  color: red;
-}
-
-.outline {
-  transform: translate(100%, 0);
-  transition: all 1s;
-}
-
-.outline_status_in {
-  transform: translate(0, 0);
-}
-
-.outline__item {
+.screen-5__heading_animate_done,
+.screen-5__subheading_animate_done,
+.screen-5__bg_animate_done {
+  opacity: 1;
+  transform: translate(-50%, -50%);
   transition: all 1s;
 }

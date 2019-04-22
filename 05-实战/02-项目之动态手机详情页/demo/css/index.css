@@ -187,15 +187,15 @@
 /* 3个特点的绝对位置 */
 .screen-2__point_i_1 {
   top: 150px;
-  left: -120px;
+  left: -140px;
 }
 .screen-2__point_i_2 {
   top: 30px;
-  right: 160px;
+  right: 140px;
 }
 .screen-2__point_i_3 {
   top: 330px;
-  right: 40px;
+  right: 30px;
 }
 
 /* 第三屏 */
@@ -385,7 +385,7 @@
   position: absolute;
   transform: translate(-50%, -50%);
   left: 50%;
-  top: 200px;
+  top: 210px;
 }
 /* 图片 */
 .screen-5__bg {
@@ -394,9 +394,9 @@
   background: url(../img/bg-screen-5.png) center top no-repeat;
   background-size: cover; /* 把背景图像扩展至最大尺寸 */
   position: absolute;
+  transform: translate(-50%, -50%);
   left: 50%;
-  margin-left: -960px;
-  bottom: 0;
+  bottom: -160px;
 }
 
 /* 第六屏 */
@@ -438,8 +438,8 @@
   /* 固定定位，脱离文档流 */
   position: fixed;
   padding: 5px 10px;
-  bottom: 120px;
-  right: 0;
+  bottom: 150px;
+  right: -60px;
 }
 
 .outline__item {

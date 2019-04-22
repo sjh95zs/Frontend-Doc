@@ -115,7 +115,7 @@ var switchNavItemsActive = function(idx) {
   for (var i = 0; i < navItems.length; i++) {
     console.log(navItems[i]);
     delCls(navItems[i], "header__nav-item_status_active");
-    navTip.style.left = 20 + "px";
+    navTip.style.left = 0 + "px";
   }
   addCls(navItems[idx], "header__nav-item_status_active");
   navTip.style.left = idx * 70 + "px";

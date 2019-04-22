@@ -1,3 +1,4 @@
+// 类名
 var screenAnimateElements = {
   ".screen-1": [".screen-1__heading", ".screen-1__phone", ".screen-1__shadow"],
   ".screen-2": [
@@ -25,16 +26,16 @@ var screenAnimateElements = {
   ".screen-5": [".screen-5__heading", ".screen-5__subheading", ".screen-5__bg"]
 };
 
+// 测试函数
 function setScreenAnimate(screenCls) {
   var screen = document.querySelector(screenCls); // 获取当前屏的元素
   var animateElements = screenAnimateElements[screenCls]; // 需要设置动画的元素
 
   var isSetAnimateClass = false; // 是否有初始化子元素的样式
-
   var isAnimateDone = false; // 当前屏幕下所有子元素的状态是done？
 
   screen.onclick = function() {
-    //  初始化样式，增加init A A_init
+    // 初始化样式，添加init，A A_init
     if (isSetAnimateClass === false) {
       for (var i = 0; i < animateElements.length; i++) {
         var element = document.querySelector(animateElements[i]);
@@ -47,7 +48,7 @@ function setScreenAnimate(screenCls) {
       isSetAnimateClass = true;
       return;
     }
-    //  切换所有 animateElements 的  init -> done   A A_done
+    // 切换所有animateElements的init -> done，A A_done
     if (isAnimateDone === false) {
       for (var i = 0; i < animateElements.length; i++) {
         var element = document.querySelector(animateElements[i]);
@@ -60,7 +61,7 @@ function setScreenAnimate(screenCls) {
       isAnimateDone = true;
       return;
     }
-    //  切换所有 animateElements 的  done -> init   A A_init
+    // 切换所有animateElements的done -> init，A A_init
     if (isAnimateDone === true) {
       for (var i = 0; i < animateElements.length; i++) {
         var element = document.querySelector(animateElements[i]);
@@ -76,6 +77,7 @@ function setScreenAnimate(screenCls) {
   };
 }
 
+// 调用函数
 for (k in screenAnimateElements) {
   setScreenAnimate(k);
 }
