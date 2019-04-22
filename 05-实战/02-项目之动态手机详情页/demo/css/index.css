@@ -1,7 +1,7 @@
 /*
   BEM 设计模式：
     模块：以 “-” 连接
-    层级：层级关系，以双下划线 “__” 连接
+    元素：层级关系，以双下划线 “__” 连接
     修饰：某元素或某模块特别的状态，必须有一个状态名和状态值，以单下划线 “_” 连接
 */
 
@@ -47,7 +47,7 @@
 }
 
 /* 导航item */
-.header__nav-item {
+.header__nav__item {
   height: 38px;
   line-height: 38px; /* line-height等于height，文本垂直居中 */
   font-size: 14px; /* 字体大小 */
@@ -57,24 +57,24 @@
   position: relative;
 }
 /* 悬停触发，让字体变为红色，出现下横条 */
-.header__nav-item:hover {
+.header__nav__item:hover {
   color: #f01400;
   border-bottom: 2px solid red;
   transition: border-bottom 0.15s;
 }
 /* 默认哪个item处于激活状态 */
-.header__nav-item_status_active {
+.header__nav__item_status_active {
   color: #f01400;
 }
 /* 特殊按钮 */
-.header__nav-item_custom_button {
+.header__nav__item_custom_button {
   background: #000000;
   color: #f4f4f5;
   text-align: center; /* 文本水平居中 */
   border-radius: 4px; /* 边框圆角 */
   padding: 0 20px;
 }
-.header__nav-item_custom_button:hover {
+.header__nav__item_custom_button:hover {
   border-bottom: 0 solid red;
 }
 
@@ -167,7 +167,6 @@
 
 /* 特点1、2、3公共属性 */
 .screen-2__point {
-  /* width: 108px; */
   height: 24px;
   line-height: 24px;
   font-size: 24px;
@@ -184,7 +183,7 @@
   padding: 0 0 0 110px;
   background: url(../img/icon-point-left.png) center left no-repeat;
 }
-/* 3个特点的绝对位置 */
+/* 3个特点的位置定位 */
 .screen-2__point_i_1 {
   top: 150px;
   left: -140px;
@@ -400,13 +399,13 @@
 }
 
 /* 第六屏 */
-.screen-buy {
+.screen-6 {
   height: 320px;
   background: #2b333b url("../img/bg-screen-buy.png") center center no-repeat;
   position: relative;
 }
 
-.screen-buy__button {
+.screen-6__button {
   width: 240px;
   height: 80px;
   line-height: 80px;

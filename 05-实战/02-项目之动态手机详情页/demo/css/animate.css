@@ -1,7 +1,8 @@
 /* 
   思路：
     init表示初始状态，done表示最终状态
-    过程：触发，初始→最终的动画效果
+    过程：触发，初始→最终
+    实现：通过添加类名来实现
 */
 
 /*导航条样式变动*/
@@ -16,26 +17,16 @@
   right: 0px;
   z-index: 3;
 }
-.header_status_black .header__nav-item,
+.header_status_black .header__nav__item,
 .header_status_black .header__logo {
   color: #fff;
 }
-.header_status_black .header__nav-item_status_active {
+.header_status_black .header__nav__item_status_active {
   color: red;
 }
-.header_status_black .header__nav-item:hover {
+.header_status_black .header__nav__item:hover {
   transition: all 1s;
   color: red;
-}
-
-/* 侧边栏 */
-.outline {
-  transition: all 1s;
-}
-
-.outline_status_in {
-  right: 0px;
-  transition: all 1s;
 }
 
 /*第一屏动画*/
@@ -56,7 +47,7 @@
 .screen-1__heading_animate_done {
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: all 1s;
+  transition: opacity, transform 1s;
 }
 
 /*第二屏动画*/
@@ -77,7 +68,7 @@
 .screen-2__phone_animate_done {
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: all 1s;
+  transition: opacity, transform 1.5s;
 }
 
 .screen-2__point_i_1_animate_init {
@@ -94,7 +85,7 @@
 .screen-2__point_i_3_animate_done {
   opacity: 1;
   transform: translate(0, 0);
-  transition: all 1s 1s;
+  transition: opacity, transform 1s 1s;
 }
 
 /* 动画帧 */
@@ -142,7 +133,7 @@
 .screen-3__phone_animate_done {
   opacity: 1;
   transform: translate(0, 0);
-  transition: all 1s;
+  transition: opacity, transform 1s;
 }
 
 .screen-3__features_animate_init {
@@ -152,7 +143,7 @@
 .screen-3__features_animate_done {
   opacity: 1;
   transform: scale(1);
-  transition: all 1s;
+  transition: opacity, transform 1s;
 }
 
 .screen-3__features__item {
@@ -177,7 +168,7 @@
 .screen-4__subheading_animate_done {
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: all 1s;
+  transition: opacity, transform 1s;
 }
 
 .screen-4__type__item_i_1_animate_init,
@@ -188,19 +179,19 @@
 }
 .screen-4__type__item_i_1_animate_done {
   opacity: 1;
-  transition: all 2s 1s;
+  transition: opacity 2s 1s;
 }
 .screen-4__type__item_i_2_animate_done {
   opacity: 1;
-  transition: all 2s 1.5s;
+  transition: opacity 2s 1.5s;
 }
 .screen-4__type__item_i_3_animate_done {
   opacity: 1;
-  transition: all 2s 2s;
+  transition: opacity 2s 2s;
 }
 .screen-4__type__item_i_4_animate_done {
   opacity: 1;
-  transition: all 2s 2.5s;
+  transition: opacity 2s 2.5s;
 }
 
 /*第5屏动画*/
@@ -218,5 +209,15 @@
 .screen-5__bg_animate_done {
   opacity: 1;
   transform: translate(-50%, -50%);
-  transition: all 1s;
+  transition: opacity, transform 1s;
+}
+
+/* 侧边栏 */
+.outline {
+  transition: right 1s;
+}
+
+.outline_status_in {
+  right: 0px;
+  transition: right 1s;
 }
