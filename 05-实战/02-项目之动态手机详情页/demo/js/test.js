@@ -31,7 +31,7 @@ function setScreenAnimate(screenCls) {
 
   var isSetAnimateClass = false; // 是否有初始化子元素的样式
 
-  var isAnimateDone = false; // 当前屏幕下所有子元素的状态是DONE？
+  var isAnimateDone = false; // 当前屏幕下所有子元素的状态是done？
 
   screen.onclick = function() {
     //  初始化样式，增加init A A_init

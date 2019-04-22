@@ -106,10 +106,10 @@
   background: url(../img/screen-1-phone.png) center center no-repeat;
   /* 绝对定位，脱离文档流 */
   position: absolute;
+  transform: translate(-50%, -50%); /* 把基准点移到盒子中心 */
   /* 盒子水平居中 */
   left: 50%;
-  margin-left: -687px;
-  bottom: 180px; /* 距离容器底部的间距 */
+  bottom: 30px; /* 距离容器底部的间距 */
   z-index: 2; /* 比它的阴影更优先 */
 }
 /* 手机阴影图 */
@@ -119,10 +119,10 @@
   background: url(../img/screen-1-shadow.png) center center no-repeat;
   /* 绝对定位，脱离文档流 */
   position: absolute;
+  transform: translate(-50%, -50%); /* 把基准点移到盒子中心 */
   /* 盒子水平居中 */
   left: 50%;
-  margin-left: -620px;
-  bottom: 10px; /* 距离容器底部的间距 */
+  bottom: -200px; /* 距离容器底部的间距 */
   z-index: 1;
   opacity: 0.8; /* 透明度 */
 }
