@@ -9,7 +9,7 @@
 
 /*导航条样式变动*/
 .header {
-  transition: all 1.5s;
+  transition: all 1s;
 }
 .header_status_black {
   background: rgba(0, 0, 0, 0.5);
