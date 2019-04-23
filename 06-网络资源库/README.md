@@ -17,7 +17,7 @@
 - CSS 框架：[Bootstrap](https://getbootstrap.com/) | [Semantic UI](https://semantic-ui.com/) | [Foundation](https://foundation.zurb.com/) | [Font Awesome（图标库）](https://fontawesome.com/) | [Animate.css（CSS3 动画库）
   ](https://daneden.github.io/animate.css/)
 
-- CSS 奇淫技巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/) | [CSS-Inspiration](https://chokcoco.github.io/CSS-Inspiration/#/)
+- CSS 奇技淫巧：[You-need-to-know-css](https://lhammer.cn/You-need-to-know-css/#/zh-cn/) | [QiShaoXuan-CSS Tricks](https://qishaoxuan.github.io/css_tricks/) | [CSS-Inspiration](https://chokcoco.github.io/CSS-Inspiration/#/)
 
 - 前端面试：[InterviewMap](https://yuchengkai.cn/docs/)
 
