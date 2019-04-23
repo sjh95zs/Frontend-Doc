@@ -146,3 +146,9 @@
 ### 2.6、CSS 代码缩进
 
 > 建议缩进 2 个空格
+
+## 3、编码技巧
+
+> DRY、currentColor、inherit 和合理使用简写
+>
+> 参考：https://xiaohuochai.site/CSS/grammar/grammar_codingTech.html
