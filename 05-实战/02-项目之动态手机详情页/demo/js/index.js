@@ -102,7 +102,7 @@ window.onload = function() {
   // 第一屏延迟0.1s直接触发，无需滚动条触发
   setTimeout(function() {
     playScreenAnimateDone(".screen-1");
-  }, 200);
+  }, 100);
 };
 
 // 第二步：滚动条触发，init→done
