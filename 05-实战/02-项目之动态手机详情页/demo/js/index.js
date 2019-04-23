@@ -99,6 +99,10 @@ window.onload = function() {
   for (k in screenAnimateElements) {
     setScreenAnimateInit(k);
   }
+  // 第一屏延迟0.1s直接触发，无需滚动条触发
+  setTimeout(function() {
+    playScreenAnimateDone(".screen-1");
+  }, 200);
 };
 
 // 第二步：滚动条触发，init→done
@@ -114,13 +118,6 @@ function playScreenAnimateDone(screenCls) {
     );
   }
 }
-
-// 第一屏延迟0.1s直接触发，无需滚动条触发
-setTimeout(function() {
-  playScreenAnimateDone(".screen-1");
-}, 100);
-
-// 滚动条触发
 window.onscroll = function() {
   /* 获取滚动条的滚动值 */
   var top = document.documentElement.scrollTop;
@@ -137,7 +134,6 @@ window.onscroll = function() {
   } else {
     delCls(getElem(".outline"), "outline_status_in");
   }
-
   // 滚动条触发第2~5屏
   if (top > 800 * 1 - 100) {
     playScreenAnimateDone(".screen-2");
@@ -160,7 +156,6 @@ var setNavJump = function(i, lib) {
     document.documentElement.scrollTop = i * 800;
   };
 };
-
 // 导航条-点击页面跳转
 var navItems = getAllElem(".header__nav__item");
 for (var i = 0; i < navItems.length; i++) {
