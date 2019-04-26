@@ -19,7 +19,7 @@
 
    - HTML
    - CSS
-   - JavaScript：任何情况 JS 都是最重要的，不要忘本
+   - JavaScript：**任何情况 JS 都是最重要的，不要忘本**
 
 4. 优势
 
@@ -38,11 +38,9 @@
 5. 学习目标
 
    - 熟练使用 jq
-   - 深入理解 3 层
    - 组件化思维
    - 面向对象
 
 ## jq 基础
 
-- `$`和 jQuery 相同，
-- 书写格式：`$(selector, content);`
+- `$`和 `jQuery` 相同
