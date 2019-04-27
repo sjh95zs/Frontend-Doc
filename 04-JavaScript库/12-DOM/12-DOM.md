@@ -63,3 +63,9 @@
 ### 删除
 
 - `元素节点.removeAttribute(属性名)`
+
+## 3、节点内容
+
+- innerHTML：所有内容
+- outerHTML：开始和结束标签
+- innerText：所有文本内容
