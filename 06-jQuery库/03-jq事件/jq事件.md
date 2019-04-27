@@ -52,7 +52,16 @@ $("selector").事件类型(function() {
 
 ## event 对象
 
-> 更详细的参数
+- 事件类型：`even.type`
+- 事件正在执行的节点：`event.target`
+- 事件绑定的节点，与 this 值始终相等：`event.currentTarget`
+- 阻止事件冒泡：`event.stopPropagation();`
+- 检测事件对象中是否调用过 event.stopPropagation()：`event.isPropagationStopped();`
+- 取消事件的进一步冒泡，而且可以阻止同一个事件的其他监听函数被调用：`event.stopImmediatePropagation();`
+- 阻止默认行为：`event.preventDefault();`
+- 事件的命名空间：`event.namespace`
+- 事件被触发的一个事件处理程序的最后返回值：`event.result`；当使用 `return false` 时，既可以阻止冒泡，也可以阻止默认行为
+- 确定鼠标事件和键盘事件键值：`event.whitch`
 
 ## 事件绑定与取消
 
