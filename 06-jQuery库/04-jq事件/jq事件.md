@@ -16,22 +16,41 @@ $("selector").事件类型(function() {
 - 鼠标松开：mouseup
 - 鼠标移入：mouseenter
 - 鼠标移出：mouseleave
-- 鼠标移入、移出指定元素及其子元素：mouseover、mouseout（**少用**）
+- 移入移出组合：hover
+
+  ```js
+  $("#p1").hover(
+    function() {
+      alert("你进入了 p1!");
+    },
+    function() {
+      alert("拜拜! 现在你离开了 p1!");
+    }
+  );
+  ```
+
 - 鼠标在 DOM 内部移动：mousemove
-- 滚动：scroll
+- 滚动指定的元素时：scroll，适用于所有可滚动的元素和 window 对象（浏览器窗口）
 
 ## 键盘
 
-- 键盘按下：keydown
-- 键盘松开：keyup
+- 键盘按下时：keydown
+- 键盘松开时：keyup
+- 按下一个按键，并产生一个字符时：keypress
+
+  ```js
+  $(window).keypress(function(event) {
+    // 通过event.which可以拿到按键代码；如果是keypress事件，则拿到ASCII码
+  });
+  ```
 
 ## 其他事件
 
 - 文档加载完毕后：ready，需要用`$(document)`
-- 调整浏览器窗口大小：resize，需要用`$(window)`
+- 调整浏览器窗口大小时：resize，需要用`$(window)`
 - 获取焦点：focus
 - 失去焦点：blur
-- 元素值发生改变：change，比如 input 元素
+- 元素值发生改变：change，多用于文本类元素，比如 input 元素
 - 被选中：select，只能用于 textarea 或文本类型的 input
 
 - 提交表单：submit
@@ -45,27 +64,26 @@ $("selector").事件类型(function() {
   - 阻止表单提交
 
     ```js
-    $("form").submit(function() {
-      return false;
+    $("form").submit(function(event) {
+      event.preventDefault();
+      // 或者return false;
     });
     ```
 
 ## event 对象
 
 - 事件类型：`even.type`
+- 确定鼠标事件和键盘事件键值：`event.whitch`
+- 事件的命名空间：`event.namespace`
 - 事件正在执行的节点：`event.target`
 - 事件绑定的节点，与 this 值始终相等：`event.currentTarget`
-- 阻止事件冒泡：`event.stopPropagation();`
-- 检测事件对象中是否调用过 event.stopPropagation()：`event.isPropagationStopped();`
-- 取消事件的进一步冒泡，而且可以阻止同一个事件的其他监听函数被调用：`event.stopImmediatePropagation();`
-- 阻止默认行为：`event.preventDefault();`
-- 事件的命名空间：`event.namespace`
-- 事件被触发的一个事件处理程序的最后返回值：`event.result`；当使用 `return false` 时，既可以阻止冒泡，也可以阻止默认行为
-- 确定鼠标事件和键盘事件键值：`event.whitch`
+- 阻止事件冒泡：`event.stopPropagation()`
+- 阻止事件的默认行为：`event.preventDefault()`
+- 事件被触发的一个事件处理程序的最后返回值：`event.result`
 
 ## 事件绑定与取消
 
-- 绑定一个或多个事件：`on("event",selector,fn)`
+- 绑定一个或多个事件
 
   ```js
   $("img").on({
