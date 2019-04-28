@@ -14,6 +14,7 @@
 | 04-JavaScript 库 | JavaScript 库                      |
 | 05-实战          | 综合实战                           |
 | 06-jQuery 库     | jQuery 库                          |
+| 07-ajax 与 json  | 浏览器与服务器的信息交换           |
 | 网络资源库       | 本人筛选过的优质网站               |
 
 ## 前端知识体系
