@@ -53,3 +53,17 @@
      .slideUp(2000)
      .slideDown(2000);
    ```
+
+4. noConflict()方法
+
+   > noConflict() 方法会释放对 `$` 标识符的控制，这样其他脚本就可以使用它
+
+   ```js
+   // 最优方法：外部释放$，内部仍然使用$
+   $.noConflict();
+   jQuery(document).ready(function($) {
+     $("button").click(function() {
+       $("p").text("jQuery 仍然在工作!");
+     });
+   });
+   ```
