@@ -116,8 +116,8 @@
 
 6. 查找、过滤
 
-- 后代：`$(selector).find();`
-- 子代：`$(selector).children();`
-- 唯一父亲：`$(selector).parent();`
-- 兄弟：`$(selector).next();`和`$(selector).prev();`
-- 获取返回数组中的第 n 个 元素：`$(selector).eq(n);`
+   - 后代：`$(selector).find();`
+   - 子代：`$(selector).children();`
+   - 唯一父亲：`$(selector).parent();`
+   - 兄弟：`$(selector).next();`和`$(selector).prev();`
+   - 获取返回数组中的第 n 个 元素：`$(selector).eq(n);`
