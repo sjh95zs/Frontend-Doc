@@ -68,22 +68,22 @@ xhr.onreadystatechange = function() {
 };
 ```
 
-**注意**
+- **注意**
 
-- 如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头，然后在 send() 方法中规定您希望发送的数据
+  - 如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头，然后在 send() 方法中规定您希望发送的数据
 
-  ```js
-  xhr.open("POST", "/try/ajax/demo_post2.php");
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.send("fname=Henry&lname=Ford");
-  ```
+    ```js
+    xhr.open("POST", "/try/ajax/demo_post2.php");
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("fname=Henry&lname=Ford");
+    ```
 
-- async 设置为异步 true：在等待服务器响应时执行其他脚本，当响应就绪后对响应进行处理
+  - async 设置为异步 true：在等待服务器响应时执行其他脚本，当响应就绪后对响应进行处理
 
-- 必须使用 post 的情况
-  1. 无法使用缓存文件（更新服务器上的文件或数据库）
-  2. 向服务器发送大量数据（post 没有数据量限制）
-  3. 发送包含未知字符的用户输入时（post 比 get 更稳定可靠）
+  - 必须使用 post 的情况
+    1. 无法使用缓存文件（更新服务器上的文件或数据库）
+    2. 向服务器发送大量数据（post 没有数据量限制）
+    3. 发送包含未知字符的用户输入时（post 比 get 更稳定可靠）
 
 ## 4、XMLHttpRequest Level 2
 
