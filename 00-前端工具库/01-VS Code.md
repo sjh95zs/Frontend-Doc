@@ -39,6 +39,7 @@
 - 路径自动补全：Path Intellisense
 - 代码美化：Prettier - Code formatter
 - 文件图标：vscode-icons
+- PHP 格式化：PHP Intelephense
 
 ---
 
