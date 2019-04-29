@@ -1,16 +1,11 @@
 # Ajax
 
-## 1、同步与异步
-
-- 同步：提交请求->服务器处理->处理完毕返回（这期间浏览器不能做其他事情）
-- 异步：提交请求->服务器处理（此时浏览器可以做其他事情）->触发响应事件处理
-
-## 2、为什么需要 Ajax？
+## 1、为什么需要 Ajax？
 
 > 我们在访问一个普通的网站时，当浏览器加载完 HTML、CSS、JS 等文件以后，网站的内容就固定了
 > Ajax 出现之前，如果想让网站内容发生更改，就必须刷新重载页面。Ajax 实现了异步加载，无需重新加载整个网页的情况下，进行局部更新
 
-## 3、原生 js 发送 Ajax 请求的 5 个步骤
+## 2、原生 js 实现 Ajax 请求的 5 个步骤
 
 1. 实例化一个 XMLHttpRequest 对象（**核心**）
    - 不阻塞，且可进行局部更新
@@ -19,10 +14,12 @@
    - method：要使用的 HTTP 方法，比如 GET、POST 等
    - url：请求的 url
    - async：异步请求 true（默认值）；同步请求 false（**不建议**）
+     - 异步：提交请求->服务器处理（此时浏览器可以做其他事情）->触发响应事件处理
+     - 同步：提交请求->服务器处理->处理完毕返回（这期间浏览器不能做其他事情）
    - user：用户名，用于认证
    - password：用户密码，用于认证
 
-3. 发出请求，`send([content])`
+3. 发送请求，`send([content])`
 
    - content：发送给服务器的内容，**仅用于 POST 请求**
 
@@ -37,7 +34,7 @@
    |       4       | 下载完毕         |
 
 5. 获取返回的数据
-   - responseText：获得字符串形式的响应数据（**常用**）
+   - responseText：获得**字符串形式**的响应数据（**常用**）
    - responseXML：获得 XML 形式的响应数据
 
 ```js
@@ -53,7 +50,7 @@ if (window.XMLHttpRequest) {
 }
 // 【2】创建请求
 xhr.open("GET", "/api/hello");
-// 【3】发出请求
+// 【3】发送请求
 xhr.send();
 // 【4】当 readyState 属性改变时，就会调用该事件句柄
 xhr.onreadystatechange = function() {
@@ -84,6 +81,7 @@ xhr.onreadystatechange = function() {
     1. 无法使用缓存文件（更新服务器上的文件或数据库）
     2. 向服务器发送大量数据（post 没有数据量限制）
     3. 发送包含未知字符的用户输入时（post 比 get 更稳定可靠）
+  - html 文件不能直接打开，需要在 WampServer 服务端中打开，否则就会出现跨域问题
 
 ## 4、XMLHttpRequest Level 2
 
@@ -93,6 +91,7 @@ XMLHttpRequest 升级版，新增了如下内容：
 - 可以通过 FormData 发送表单数据
 - 可以上传文件
 - 支持跨域请求
+  - 在 CORS 出现之前，通常是使用 JSONP 来取巧地解决跨域问题；要使用 CORS，默认情况下，前端不用修改任何代码，如果浏览器发现 XMLHttpRequest 发出了跨域请求，会帮我们做相应的处理，但**服务器需要返回 Access-Control-Allow-Origin 响应头，指定允许进行跨域请求的域**
 - 可以获取服务器端的二进制数据
 - 可以获得数据传输的进度信息
 
@@ -122,7 +121,7 @@ XMLHttpRequest 升级版，新增了如下内容：
 
 1. 语法
 
-   > 必须使用双引号" "
+   > 只能使用双引号" "
 
    - key-value 对
    - 各键值对用逗号分隔
@@ -142,7 +141,7 @@ XMLHttpRequest 升级版，新增了如下内容：
 
 3. json 字符串 与 js 对象
 
-   - JSON.parse(text,[reviver])：将 json 字符串转化为 js 对象
+   - JSON.parse(text,[reviver])：将字符串转化为 js 数据类型
 
      - text:一个有效的 json 字符串
      - reviver: 一个转换结果的函数，将为对象的每个成员调用此函数
@@ -152,7 +151,7 @@ XMLHttpRequest 升级版，新增了如下内容：
      var jsObj = JSON.parse('{ "name":"runoob", "site":"www.runoob.com" }');
      ```
 
-   - JSON.stringify(value,[replacer,[space]])：将 js 对象转化为 json 字符串
+   - JSON.stringify(value,[replacer,[space]])：将 js 数据类型转化为字符串
 
      - value：要转换的 js 值（通常为对象或数组）
 
@@ -169,7 +168,7 @@ XMLHttpRequest 升级版，新增了如下内容：
 
 ## 7、JSONP
 
-- 同源策略是浏览器的一种安全策略，所谓同源是指域名、协议、端口完全相同
+- 同源策略是浏览器的一种安全策略，所谓同源是指**域名、协议、端口**完全相同
 
 ![同源与跨域](img/同源与跨域.png)
 
