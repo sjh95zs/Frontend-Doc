@@ -97,6 +97,8 @@ XMLHttpRequest 升级版，新增了如下内容：
 
 ## 5、jq 操作 Ajax
 
+参考：https://www.runoob.com/jquery/jquery-ref-ajax.html
+
 1. `$(selector).load(URL,data,callback);` 从服务器加载数据，并把返回的数据放入被选元素中
 2. `$.get(URL,callback);` 通过 GET 请求从服务器上请求数据
 3. `$.post(URL,data,callback);` 通过 GET 请求从服务器上请求数据
@@ -104,9 +106,10 @@ XMLHttpRequest 升级版，新增了如下内容：
 
    ```js
    $.ajax({
-     url: "01.php", //请求地址
-     data: "name=fox&age=18", //发送的数据
-     type: "GET", //请求的方式
+     url: "http://localhost/demo/demo-4/server/user.json", //请求地址
+     data: { name: fox, age: 18 }, //发送的数据
+     type: "GET", // 请求的方式
+     dataType: "json", // 返回的数据类型
      success: function(argument) {}, // 请求成功执行的方法
      beforeSend: function(argument) {}, // 在发送请求之前调用,可以做一些验证之类的处理
      error: function(argument) {

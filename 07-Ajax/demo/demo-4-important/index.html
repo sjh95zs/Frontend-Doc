@@ -50,6 +50,7 @@
           $.ajax({
             url:
               "http://localhost/demo/demo-4-important/server/isUserRepeat.php",
+            dataType: "json", // 返回的数据类型
             method: "POST",
             data: { username: userVal },
             success: function(data) {
@@ -92,6 +93,7 @@
         if (userReg.test(userVal) && pwdReg.test(pwdVal) && isRepeat == false) {
           $.ajax({
             url: "http://localhost/demo/demo-4-important/server/register.php",
+            dataType: "json", // 返回的数据类型
             method: "POST",
             data: { username: userVal, userpwd: pwdVal },
             success: function(data) {
