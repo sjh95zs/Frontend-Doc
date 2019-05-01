@@ -46,14 +46,14 @@
 3. 以**构造函数的形式**调用时，this 是**新创建的那个对象实例**（最常见）
 
    ```js
-   function fun() {
+   function Fun() {
      this.name = "嘻嘻";
      this.hello = function() {
        console.log(this);
        console.log(this.name);
      };
    }
-   var xiaoming = new fun();
+   var xiaoming = new Fun();
    xiaoming.hello();
    // xiaoming
    // 嘻嘻

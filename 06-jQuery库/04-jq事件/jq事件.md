@@ -75,10 +75,10 @@ $("selector").事件类型(function() {
 - 事件类型：`even.type`
 - 确定鼠标事件和键盘事件键值：`event.whitch`
 - 事件的命名空间：`event.namespace`
-- 事件正在执行的节点：`event.target`
-- 事件绑定的节点，与 this 值始终相等：`event.currentTarget`
-- 阻止事件冒泡：`event.stopPropagation()`
-- 阻止事件的默认行为：`event.preventDefault()`
+- **事件正在执行的节点**：`event.target`
+- **事件绑定的节点**，与 this 值始终相等：`event.currentTarget`
+- **阻止事件冒泡**：`event.stopPropagation()`
+- **阻止事件的默认行为**：`event.preventDefault()`
 - 事件被触发的一个事件处理程序的最后返回值：`event.result`
 
 ## 事件绑定与取消

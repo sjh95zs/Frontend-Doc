@@ -1,6 +1,6 @@
 # Chrome
 
-> 子下载地址：https://www.google.cn/chrome/b/
+> 下载地址：https://www.google.cn/chrome/b/
 
 ## 浏览器插件(需科学上网)
 
