@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>class绑定</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <!-- 对象语法 -->
+    <div id="app" class="static" :class="classObject"></div>
+
+    <!-- 数组写法 -->
+    <div id="app2" v-bind:class="[activeClass, errorClass]"></div>
+
+    <!-- 组合使用 -->
+    <div v-bind:class="[{ active: isActive }, errorClass]"></div>
+
+    <script>
+      // 当 isActive 或者 hasError 变化时，class 列表将相应地更新
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          classObject: { active: true, "text-danger": false }
+        }
+      });
+      // 结果：<div class="static active"></div>
+
+      var vm = new Vue({
+        el: "#app2",
+        data: {
+          activeClass: "active",
+          errorClass: "text-danger"
+        }
+      });
+      // 结果：<div class="active text-danger"></div>
+    </script>
+  </body>
+</html>

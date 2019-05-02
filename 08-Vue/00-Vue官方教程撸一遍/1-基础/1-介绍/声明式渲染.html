@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>声明式渲染</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app" v-bind:title="titleMessage">
+      {{ message }}
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "hello vue",
+          titleMessage: "提示"
+        }
+      });
+
+      // 通过钩子el，现在数据data与DOM已经建立关联，二者都是响应式的
+    </script>
+  </body>
+</html>
