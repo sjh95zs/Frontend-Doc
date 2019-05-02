@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>基础用法</title>
+    <script src="../vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 单行文本 -->
+      <input v-model="message" />
+      <p>Message is：{{ message }}</p>
+
+      <!-- 多行文本 -->
+      <p>{{ text }}</p>
+      <textarea v-model="text"></textarea>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "",
+          text: ""
+        }
+      });
+    </script>
+  </body>
+</html>
