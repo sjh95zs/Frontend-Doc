@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>插槽slot</title>
+    <link rel="stylesheet" href="semantic.css" />
+    <script src="node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app1">
+      <div class="ui container">
+        <segment>
+          <!-- slot="A"会覆盖掉模板的name="A"的内容 -->
+          <h1 slot="A">Hello</h1>
+          <p slot="A">how are you</p>
+        </segment>
+      </div>
+    </div>
+
+    <script>
+      // 插槽slot，可以动态的插入内容，非常好用
+      Vue.component("segment", {
+        template: `
+        <div class="ui stacked segment">
+          <slot name="A">😄</slot>
+          <slot name="B">👍</slot>
+        </div>`
+      });
+      let app1 = new Vue({
+        el: "#app1"
+      });
+    </script>
+  </body>
+</html>

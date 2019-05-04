@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>事件</title>
+    <link rel="stylesheet" href="semantic.css" />
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="ui container">
+        <!-- 点击事件 -->
+        <button class="ui button" v-on:click="counter += 1">喜欢</button>
+        <div class="ui red circular label">{{ counter }}</div>
+        <button class="ui button" @click="unlike">不喜欢</button>
+
+        <!-- 键盘事件 -->
+        <div class="ui input">
+          <input type="text" v-on:keyup.enter="process" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var dataSource = {
+        counter: 0
+      };
+
+      var vm = new Vue({
+        el: "#app",
+        data: dataSource,
+        methods: {
+          unlike: function() {
+            this.counter -= 1;
+          },
+          process: function(event) {
+            console.log(event.target.value);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

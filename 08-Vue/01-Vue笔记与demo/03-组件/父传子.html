@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>父传子</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 动态：父组件app的data中的数据传给text -->
+      <ui-btn :text="A"></ui-btn>
+      <ui-btn :text="B"></ui-btn>
+      <ui-btn :text="C"></ui-btn>
+      <!-- 静态：text的值就是字符串"哈哈" -->
+      <ui-btn text="哈哈"></ui-btn>
+    </div>
+    <script>
+      Vue.component("ui-btn", {
+        // 创建 text 自定义属性
+        props: ["text"],
+        template: `<button>{{text}}</button>`
+      });
+
+      let app = new Vue({
+        el: "#app",
+        data: {
+          A: "a",
+          B: "b",
+          C: "c"
+        }
+      });
+
+      // 父组件可以使用 `props` 把数据传给子组件，分为动态和静态 2 种，而且是单向的（只能父传子）
+    </script>
+  </body>
+</html>
