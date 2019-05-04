@@ -12,21 +12,21 @@
     <div id="app">
       <div class="ui container">
         <template v-for="(item, index) in items">
-          <div>{{ index + 1 }}：{{ item.text }}</div>
+          <div>{{ index }} - {{ item.text }}</div>
           <div class="ui divider"></div>
         </template>
       </div>
     </div>
 
     <script>
-      var dataSource = {
-        items: [{ text: "nice" }, { text: "great" }, { text: "awesome" }]
-      };
-
-      var vm = new Vue({
+      let app = new Vue({
         el: "#app",
-        data: dataSource
+        data: {
+          items: [{ text: "nice" }, { text: "great" }, { text: "awesome" }]
+        }
       });
+
+      // 用于列表的添加或删除
     </script>
   </body>
 </html>

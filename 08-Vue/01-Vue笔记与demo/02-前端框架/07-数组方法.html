@@ -12,23 +12,21 @@
     <div id="app">
       <div class="ui container">
         <template v-for="(item, index) in items">
-          <div>{{ index }}：{{ item.text }}</div>
+          <div>{{ index }} - {{ item.text }}</div>
           <div class="ui divider"></div>
         </template>
       </div>
     </div>
 
     <script>
-      var dataSource = {
-        items: [{ text: "nice" }, { text: "great" }, { text: "awesome" }]
-      };
-
-      var vm = new Vue({
+      let app = new Vue({
         el: "#app",
-        data: dataSource
+        data: {
+          items: [{ text: "nice" }, { text: "great" }, { text: "awesome" }]
+        }
       });
 
-      // push、reverse、pop、splice
+      // push、reverse、pop、splice等内置的数组方法
     </script>
   </body>
 </html>

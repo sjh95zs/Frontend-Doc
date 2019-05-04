@@ -12,31 +12,34 @@
     <div id="app">
       <div class="ui container">
         <!-- 点击事件 -->
-        <button class="ui button" v-on:click="counter += 1">喜欢</button>
+        <button class="ui button" @click="like">喜欢</button>
         <div class="ui red circular label">{{ counter }}</div>
         <button class="ui button" @click="unlike">不喜欢</button>
 
         <!-- 键盘事件 -->
         <div class="ui input">
-          <input type="text" v-on:keyup.enter="process" />
+          <h3>键盘事件：</h3>
+          <input type="text" @keyup.enter="process" />
         </div>
       </div>
     </div>
 
     <script>
-      var dataSource = {
-        counter: 0
-      };
-
-      var vm = new Vue({
+      let app = new Vue({
         el: "#app",
-        data: dataSource,
+        data: {
+          counter: 0
+        },
         methods: {
+          like: function() {
+            this.counter++;
+          },
           unlike: function() {
-            this.counter -= 1;
+            this.counter--;
           },
           process: function(event) {
-            console.log(event.target.value);
+            alert(event.target.value);
+            event.target.value = "";
           }
         }
       });

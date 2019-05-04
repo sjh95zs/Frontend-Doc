@@ -11,23 +11,7 @@
   <body>
     <div id="app">
       <div class="ui container">
-        <!-- <div class="ui green inverted segment">{{ message }}</div>
-
-        <div class="ui radio checkbox">
-          <input type="radio" value="hello" v-model="message" />
-          <label>hello</label>
-        </div>
-        <div class="ui radio checkbox">
-          <input type="radio" value="hola" v-model="message" />
-          <label>hola</label>
-        </div>
-        <div class="ui radio checkbox">
-          <input type="radio" value="CCC" v-model="message" />
-          <label>CCC</label>
-        </div> -->
-
         <div class="ui pink inverted segment">{{ selected }}</div>
-
         <select class="ui fluid dropdown" v-model="selected">
           <option v-for="option in options" :value="option.value">{{
             option.value
@@ -37,15 +21,15 @@
     </div>
 
     <script>
-      var dataSource = {
-        selected: "",
-        options: [{ value: "A" }, { value: "B" }, { value: "C" }]
-      };
-
-      var vm = new Vue({
+      let app = new Vue({
         el: "#app",
-        data: dataSource
+        data: {
+          selected: "",
+          options: [{ value: "A" }, { value: "B" }, { value: "C" }]
+        }
       });
+
+      // v-model双向绑定
     </script>
   </body>
 </html>
