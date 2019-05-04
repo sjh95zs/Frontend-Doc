@@ -23,10 +23,10 @@
       // 插槽slot，可以动态的插入内容，非常好用
       Vue.component("segment", {
         template: `
-        <div class="ui stacked segment">
-          <slot name="A">😄</slot>
-          <slot name="B">👍</slot>
-        </div>`
+          <div class="ui stacked segment">
+            <slot name="A">😄</slot>
+            <slot name="B">👍</slot>
+          </div>`
       });
       let app1 = new Vue({
         el: "#app1"
