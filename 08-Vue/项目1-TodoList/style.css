@@ -122,19 +122,28 @@ button {
 /* 页脚 */
 footer {
   position: fixed;
-  right: -170px;
+  right: -175px;
   bottom: 80px;
-  padding: 15px 10px;
+  padding: 15px 15px;
   text-align: left;
   font-size: 16px;
   line-height: 30px;
   background-color: rgba(76, 175, 80, 0.8);
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 20px 0 0 20px;
   transition: box-shadow 1s, right 1.5s;
 }
 footer:hover {
-  box-shadow: 0 0 6px #b41f1f;
-  right: -0;
+  box-shadow: 0 0 6px rgb(180, 31, 31);
+  right: 0;
+}
+footer span {
+  padding-left: 10px;
+}
+footer a span:hover {
+  color: #000000;
+}
+footer .fas {
+  color: #000000;
 }
