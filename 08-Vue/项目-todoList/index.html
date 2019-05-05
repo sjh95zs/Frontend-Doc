@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>项目-todoList</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 主标题 -->
+      <div title="作者：吴晓斌" class="header">
+        <h1>搞事情</h1>
+      </div>
+
+      <!-- 副标题 -->
+      <div class="subheader">
+        <p>Todo List</p>
+      </div>
+
+      <!-- 输入框 -->
+      <div id="task">
+        <div class="wrap">
+          <input
+            class="task-input"
+            type="text"
+            placeholder="请输入您的任务..."
+            @keyup.enter="add"
+            v-model="current"
+          />
+          <button @click="remove_all_yes">清空所有已完成任务</button>
+        </div>
+      </div>
+
+      <!-- 待完成任务 -->
+      <div id="list_no">
+        <div class="wrap">
+          <div class="item" v-for="(todo_no, index) in list_no">
+            <button title="扔到已完成区" @click="complate(index)">👍</button>
+            <span>{{ index }}. {{ todo_no }}</span>
+            <button title="删除" class="btn-no" @click="remove_no(index)">
+              ❌
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 已完成任务 -->
+      <div id="list_yes">
+        <div class="wrap">
+          <div class="item" v-for="(todo_yes, index) in list_yes">
+            <button title="扔回待完成区" @click="change(index)">👆</button>
+            <span>{{ index }}. {{ todo_yes }}</span>
+            <button title="删除" class="btn-no" @click="remove_yes(index)">
+              ❌
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 页脚 -->
+      <footer>
+        <p>🧛‍ 吴晓斌</p>
+        <p>📫 845225263@qq.com</p>
+        <a href="https://github.com/wuxiaobin1995" target="_blank"
+          >👉 个人GitHub</a
+        >
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
