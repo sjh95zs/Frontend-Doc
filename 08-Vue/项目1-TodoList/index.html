@@ -39,7 +39,7 @@
         <div class="wrap">
           <div class="item" v-for="(todo_no, index) in list_no">
             <button title="扔到已完成区" @click="complate(index)">👍</button>
-            <span>{{ index }}. {{ todo_no }}</span>
+            <span>{{ index + 1 }}. {{ todo_no }}</span>
             <button title="删除" class="btn-no" @click="remove_no(index)">
               ❌
             </button>
@@ -52,7 +52,7 @@
         <div class="wrap">
           <div class="item" v-for="(todo_yes, index) in list_yes">
             <button title="扔回待完成区" @click="change(index)">👆</button>
-            <span>{{ index }}. {{ todo_yes }}</span>
+            <span>{{ index + 1 }}. {{ todo_yes }}</span>
             <button title="删除" class="btn-no" @click="remove_yes(index)">
               ❌
             </button>
