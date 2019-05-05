@@ -1,4 +1,4 @@
 # Sass
 
-1. 安装 Ruby
-2. 安装 Sass
+1. 先安装 Ruby
+2. 再安装 Sass
