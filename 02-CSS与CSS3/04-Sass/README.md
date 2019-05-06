@@ -4,28 +4,29 @@
 
 1. 先安装 Ruby（ 下载地址：https://rubyinstaller.org/downloads/ ）
 2. 再安装 Sass( https://sass-lang.com/ ) 和 Compass( http://compass-style.org/ )
+3. 常用命令：
 
-```js
-gem install sass // 安装Sass，如果mac下输入这个命令时没有权限，则需要在前面加上 sudo
+   ```js
+   gem install sass // 安装Sass，如果mac下输入这个命令时没有权限，则需要在前面加上 sudo
 
-gem update sass // 更新Sass
+   gem update sass // 更新sass
 
-gem sources --remove https://rubygems.org/ // 移除自带的下载源
+   gem sources --remove https://rubygems.org/ // 移除自带的下载源
 
-gem sources -a https://gems.ruby-china.com // 设置为淘宝的下载源，速度更快
+   gem sources -a https://gems.ruby-china.com // 设置为淘宝的下载源，速度更快
 
-gem sources -l // 查看下载源
+   gem sources -l // 查看下载源是否是淘宝的
 
-gem isntall compass // 安装Compass
+   gem isntall compass // 安装compass
 
-gem update compass // 更新Copmass
+   gem update compass // 更新compass
 
-compass create CompassDemo // 通过 Compass 创建工程目录
+   compass create CompassDemo // 通过 Compass 创建工程目录
 
-compass watch // 为了能够让文件实时编译，我们可以通过 copass watch 监听sass文件的变化（在CompassDemo目录下）
+   compass watch // copass watch编译sass文件（在CompassDemo目录下）
 
-sass-convert main.scss main.sass // main.scss转化为main.sass
-```
+   sass-convert main.scss main.sass // main.scss 转为 main.sass
+   ```
 
 ## 介绍
 
@@ -45,40 +46,38 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
 
 ## 使用
 
-- Sass 是通过`$`符号来声明变量，我们新建一个文件`_variables.scss`，这个文件专门用来存放变量，然后在其他的文件中引入`_variables.scss` 即可。因为这个文件只需要存储变量，并不需要它编译出对应的 css 文件，所以我们给文件名的前面加了下划线，意思是声明为局部文件
+- `$`符号来声明变量，我们新建一个文件`_variables.scss`，这个文件专门用来存放变量，然后在其他的文件中引入`_variables.scss` 即可。因为这个文件只需要存储变量，并不需要它编译出对应的 css 文件，所以我们给文件名的前面加了下划线，意思是声明为局部文件
 
   ```scss
-  // _variables.scss写下：
+  // _variables.scss
   $font1: Braggadocio, Arial, Verdana, Helvetica, sans-serif;
   $font2: Arial, Verdana, Helvetica, sans-serif;
 
-  // 新建文件main.scss，写下：
-  // @import "variables"; // 引入变量文件
-
+  // 新建文件main.scss
+  @ import "variables.scss"; // 引入变量文件
   .div1 {
     font-family: $font1;
   }
-
   .div2 {
     font-family: $font2;
   }
 
   // 结果：main.css
-  /* line 9, ../sass/main.scss */
   .div1 {
     font-family: Braggadocio, Arial, Verdana, Helvetica, sans-serif;
   }
-
-  /* line 13, ../sass/main.scss */
   .div2 {
     font-family: Arial, Verdana, Helvetica, sans-serif;
   }
   ```
 
-- 引入：`@import "文件名"`，如果该文件本身叫`_文件名.scss`（一般用于放共性的变量），那么这个文件不会编译成`.css`文件，因为它放的是共用的东西，没必要编译成`.css`
+- 引入：`@import "文件路径"`
+
+  - 如果该文件本身是`_文件名.scss`（一般用于放共用的变量），那么这个文件不会编译成`.css`文件，因为它放的是共用的东西，没必要编译成`.css`
   - 为了防止覆盖问题，最好加一个`!default;`，比如：在`_文件名.scss`中，`$color-1: red !default;`，表示 color-1 变量默认是红色，如果有冲突将会被覆盖
   - 为了防止覆盖问题，`@import "文件名"`最好放在头部
   - 一般来说，`@import "文件名"`只有一个
+
 - 数组：下标从 1 开始
 
   ```scss
@@ -92,7 +91,6 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
     zoom: index($list, 100px);
     margin: join($list);
   }
-
   // 结果.css
   .div {
     width: 100px;
@@ -117,7 +115,7 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
     bottom: map-get($map, bottom);
   }
   // 循环遍历
-  .div {
+  .div2 {
     @each $key, $value in $map {
       #{$key}: $value;
     }
@@ -128,8 +126,7 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
     top: 1px;
     bottom: 3px;
   }
-
-  .div {
+  .div2 {
     top: 1px;
     left: 2px;
     bottom: 3px;
@@ -172,7 +169,7 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
     color: red;
   }
   .div {
-    @include helloMixin;
+    @include helloMixin; /* 引入一盒混合宏 */
   }
 
   // 结果.css
@@ -207,7 +204,7 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
   }
   ```
 
-- 继承：`@extend` 类似于逗号选择器
+- 继承：`@extend` 类似于逗号选择器（**很常用**）
 
   ```scss
   /*简单继承*/
@@ -232,7 +229,7 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
   }
   ```
 
-* 嵌套：类似后代选择器
+- 嵌套：类似后代选择器（**很常用**）
 
   ```scss
   .div1 {
@@ -383,122 +380,134 @@ sass-convert main.scss main.sass // main.scss转化为main.sass
 
 - 内置函数
 
-```scss
-/*number*/
-$number: 70;
-$number2: 71;
-$numberPercent: 7;
-$numberRound: 25.9;
-.div {
-  zoom: percentage($numberPercent);
+  ```scss
+  /*number*/
+  $number: 70;
+  $number2: 71;
+  $numberPercent: 7;
+  $numberRound: 25.9;
+  .div {
+    zoom: percentage($numberPercent);
 
-  zoom: round($numberRound);
+    zoom: round($numberRound);
 
-  zoom: ceil($numberRound);
+    zoom: ceil($numberRound);
 
-  zoom: floor($numberRound);
+    zoom: floor($numberRound);
 
-  zoom: abs($number);
+    zoom: abs($number);
 
-  zoom: min($number, $number2);
+    zoom: min($number, $number2);
 
-  zoom: max($number, $number2);
+    zoom: max($number, $number2);
 
-  zoom: random(20);
-}
-// 结果.css
-.div {
-  zoom: 700%;
-  zoom: 26;
-  zoom: 26;
-  zoom: 25;
-  zoom: 70;
-  zoom: 70;
-  zoom: 71;
-  zoom: 14;
-}
+    zoom: random(20);
+  }
+  // 结果.css
+  .div {
+    zoom: 700%;
+    zoom: 26;
+    zoom: 26;
+    zoom: 25;
+    zoom: 70;
+    zoom: 70;
+    zoom: 71;
+    zoom: 14;
+  }
 
-/*string*/
-$string: "hello";
-.div {
-  background-image: unquote($string);
-  background-image: quote($string);
-  background-image: str-length($string);
-  background-image: str-insert($string, "a", 2);
-  background-image: str-index($string, "e");
-  background-image: to-upper-case($string);
-  background-image: to-lower-case($string);
-}
-// 结果.css
-.div {
-  background-image: hello;
-  background-image: "hello";
-  background-image: 5;
-  background-image: "haello";
-  background-image: 2;
-  background-image: "HELLO";
-  background-image: "hello";
-}
+  /*string*/
+  $string: "hello";
+  .div {
+    background-image: unquote($string);
 
-/*list*/
-$list: (1, 2, 3, 4, 5);
-.div {
-  zoom: length($list);
-  zoom: nth($list, 1);
-  zoom: set-nth($list, 1, "x");
-  zoom: join($list, (6, 7, 8));
-  zoom: append($list, 6);
-  zoom: index($list, 1);
-}
-// 结果.css
-.div {
-  zoom: 5;
-  zoom: 1;
-  zoom: "x", 2, 3, 4, 5;
-  zoom: 1, 2, 3, 4, 5, 6, 7, 8;
-  zoom: 1, 2, 3, 4, 5, 6;
-  zoom: 1;
-}
+    background-image: quote($string);
 
-/*map*/
-$map: (
-  top: 1px,
-  left: 2px,
-  bottom: 3px,
-  right: 4px
-);
-.div {
-  width: map-get($map, left);
-  @debug map-remove($map, left); /* @debug 在控制台打印结果 */
-  width: map-keys($map);
-  width: map-values($map);
-  width: map-has-key($map, top);
-}
+    background-image: str-length($string);
 
-@mixin foo($args...) {
-  @debug keywords($args);
-}
-@include foo($arg1: val, $arg2: val); /* @include 调用声明好的混合宏 */
-// 结果.css
-.div {
-  width: 2px;
-  width: top, left, bottom, right;
-  width: 1px, 2px, 3px, 4px;
-  width: true;
-}
+    background-image: str-insert($string, "a", 2);
 
-/*自定义函数*/
-$rem1: 100px;
-@function px2rem($px) {
-  $rem: 37.5px;
-  @debug $rem1;
-  @return ($px / $rem) + rem;
-}
-// 结果.css
-.div {
-  width: 0.5333333333rem;
-}
-```
+    background-image: str-index($string, "e");
+
+    background-image: to-upper-case($string);
+
+    background-image: to-lower-case($string);
+  }
+  // 结果.css
+  .div {
+    background-image: hello;
+    background-image: "hello";
+    background-image: 5;
+    background-image: "haello";
+    background-image: 2;
+    background-image: "HELLO";
+    background-image: "hello";
+  }
+
+  /*list*/
+  $list: (1, 2, 3, 4, 5);
+  .div {
+    zoom: length($list);
+
+    zoom: nth($list, 1);
+
+    zoom: set-nth($list, 1, "x");
+
+    zoom: join($list, (6, 7, 8));
+
+    zoom: append($list, 6);
+
+    zoom: index($list, 1);
+  }
+  // 结果.css
+  .div {
+    zoom: 5;
+    zoom: 1;
+    zoom: "x", 2, 3, 4, 5;
+    zoom: 1, 2, 3, 4, 5, 6, 7, 8;
+    zoom: 1, 2, 3, 4, 5, 6;
+    zoom: 1;
+  }
+
+  /*map*/
+  $map: (
+    top: 1px,
+    left: 2px,
+    bottom: 3px,
+    right: 4px
+  );
+  .div {
+    width: map-get($map, left);
+
+    @debug map-remove($map, left); /* @debug 在控制台打印结果 */
+
+    width: map-keys($map);
+
+    width: map-values($map);
+
+    width: map-has-key($map, top);
+  }
+  // 结果.css
+  .div {
+    width: 2px;
+    width: top, left, bottom, right;
+    width: 1px, 2px, 3px, 4px;
+    width: true;
+  }
+
+  /*自定义函数*/
+  $rem1: 100px;
+  @function px2rem($px) {
+    $rem: 37.5px;
+    @return ($px / $rem) + rem;
+  }
+  .div {
+    width: px2rem(20px);
+  }
+  // 结果.css
+  .div {
+    width: 0.53333rem;
+  }
+  ```
 
 ## 技巧
 
@@ -513,5 +522,16 @@ $rem1: 100px;
   ```
 
 - `#{$变量名}` 字符串插值
+
+  ```scss
+  $str: "hello.jpeg";
+  .div1 {
+    background-image: url("./img/#{$str}");
+  }
+  // 结果.css
+  .div1 {
+    background-image: url("./img/hello.jpeg");
+  }
+  ```
 
 - Sass 的变量作用域：基于`{ }`
