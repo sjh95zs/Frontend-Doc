@@ -83,7 +83,6 @@
 - 运算
 
   ```scss
-  // 运算
   .div {
     font: (10px/8px);
     font: (10px * 8);
@@ -102,10 +101,9 @@
   }
   ```
 
-* mixin 声明了一个混合宏（**重用代码块**）
+- mixin 声明了一个混合宏（**重用代码块**）
 
   ```scss
-  // 使用
   @mixin helloMixin {
     display: inline-block;
     font: {
@@ -150,7 +148,7 @@
   }
   ```
 
-* 继承：`@extend` 类似于逗号选择器（**很常用**）
+- 继承：`@extend` 类似于逗号选择器（**很常用**）
 
   ```scss
   /*简单继承*/
@@ -191,7 +189,6 @@
       }
     }
   }
-
   // 结果.css
   .div1 {
     width: 300px;
@@ -213,14 +210,13 @@
       text-decoration: underline;
     }
   }
-
   // 结果.css
   a:hover {
     text-decoration: underline;
   }
   ```
 
-* 条件和循环
+- 条件和循环
 
   ```scss
   $type: "tony";
