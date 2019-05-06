@@ -2,9 +2,9 @@
 
 ## 区别
 
-1. `new Vue({})` 实例的**参数是一个对象**，这个对象里面有很多的 Vue 选项可以使用，比如 el,data,computed,methods,components 等等
+1. `new Vue({})` 实例的**参数是一个对象**，这个对象里面有很多的 Vue 选项可以使用，比如 el，data，computed，methods，components，template 等等
 
-2. `Vue.component('...',{})` 方式声明的全局组件，**第一个参数是组件名，第二个参数也是一个对象**，同样也是里面包含很多可用的选项,data,computed,methods,components 等等
+2. `Vue.component('...',{})` 方式声明的全局组件，**第一个参数是组件名，第二个参数也是一个对象**，同样也是里面包含很多可用的选项：data，computed，methods，components，template 等等
 
 > 区别：
 >

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>v-on事件</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ count }}
+      <button @click="up">加分</button>
+      <button @click="down">减分</button>
+      <input type="text" @keyup.enter="add" v-model="userInput" />
+    </div>
+
+    <script>
+      let app = new Vue({
+        el: "#app",
+        data: {
+          count: 0,
+          userInput: ""
+        },
+        methods: {
+          up: function() {
+            return this.count++;
+          },
+          down: function() {
+            return this.count--;
+          },
+          add: function() {
+            this.count += parseInt(this.userInput);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

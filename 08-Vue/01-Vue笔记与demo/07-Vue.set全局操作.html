@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue.set全局操作</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+  </head>
+  <body>
+    <h1>Vue.set 全局操作</h1>
+    <div id="app">
+      <ul>
+        <li v-for="item in arr">{{ item }}</li>
+      </ul>
+      <button @click="change">点我</button>
+    </div>
+
+    <script>
+      // 在构造器外部声明数据
+      let outData = {
+        arr: ["aaa", "bbb", "ccc"]
+      };
+      let app = new Vue({
+        el: "#app",
+        data: outData, // 引用外部数据
+        methods: {
+          change: function() {
+            Vue.set(app.arr, 1, "哈哈"); /* 可以改变arr且自动响应视图 */
+            // outData.arr[0] = "ddd"; /* 失效 */
+            // app.arr[0] = "ddd"; /* 失效 */
+          }
+        }
+      });
+
+      // 为什么要有Vue.set的存在?
+      //    由于Javascript的限制，Vue不能自动检测以下变动的数组：
+      //      1. 当你利用索引直接设置一个数组项时，vue不会为我们自动更新
+      //      2. 当你修改数组的长度时，vue不会为我们自动更新
+    </script>
+  </body>
+</html>

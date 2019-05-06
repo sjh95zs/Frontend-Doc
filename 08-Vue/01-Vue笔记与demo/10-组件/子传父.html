@@ -9,14 +9,14 @@
   </head>
   <body>
     <div id="app">
-      <button-counter v-on:father-increment="incrementTotal"></button-counter>
+      <button-counter @father-increment="incrementTotal"></button-counter>
       <p>{{ total }}</p>
     </div>
 
     <script>
       // 子组件button-counter
       Vue.component("button-counter", {
-        template: '<button v-on:click="increment">点赞👍</button>', // 【1】点击事件 click
+        template: '<button @click="increment">点赞👍</button>', // 【1】点击事件 click
         methods: {
           // 【2】调用子组件 button-counter 的事件句柄
           increment: function() {
