@@ -174,6 +174,7 @@ EventUtil.addHandler(subMenu, "mouseout", outSubMenu);
 
 /* 
   思路：
-    1、先获取，再操作；
-    2、通过索引；
+    1、先获取，再操作
+    2、通过索引
+    3、display控制显示和隐藏
 */
