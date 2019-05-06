@@ -46,6 +46,8 @@
 
 ## 使用
 
+> 参考：http://www.ruanyifeng.com/blog/2012/06/sass.html
+
 - `$`符号来声明变量，我们新建一个文件`_variables.scss`，这个文件专门用来存放变量，然后在其他的文件中引入`_variables.scss` 即可。因为这个文件只需要存储变量，并不需要它编译出对应的 css 文件，所以我们给文件名的前面加了下划线，意思是声明为局部文件
 
   ```scss
@@ -78,62 +80,6 @@
   - 为了防止覆盖问题，`@import "文件名"`最好放在头部
   - 一般来说，`@import "文件名"`只有一个
 
-- 数组：下标从 1 开始
-
-  ```scss
-  // 创建数组
-  $list: (100px, 200px, 300px, 400px);
-
-  // 使用
-  .div {
-    width: nth($list, 1);
-    height: nth($list, 2);
-    zoom: index($list, 100px);
-    margin: join($list);
-  }
-  // 结果.css
-  .div {
-    width: 100px;
-    height: 200px;
-    zoom: 1;
-    margin: 100px, 200px, 300px, 400px;
-  }
-  ```
-
-  ```scss
-  // map数组
-  $map: (
-    top: 1px,
-    left: 2px,
-    bottom: 3px,
-    right: 4px
-  );
-
-  // 使用
-  .div {
-    top: map-get($map, top);
-    bottom: map-get($map, bottom);
-  }
-  // 循环遍历
-  .div2 {
-    @each $key, $value in $map {
-      #{$key}: $value;
-    }
-  }
-
-  // 结果.css
-  .div {
-    top: 1px;
-    bottom: 3px;
-  }
-  .div2 {
-    top: 1px;
-    left: 2px;
-    bottom: 3px;
-    right: 4px;
-  }
-  ```
-
 - 运算
 
   ```scss
@@ -156,7 +102,7 @@
   }
   ```
 
-- mixin 整块引入，声明了一个混合宏
+* mixin 声明了一个混合宏（**重用代码块**）
 
   ```scss
   // 使用
@@ -169,7 +115,7 @@
     color: red;
   }
   .div {
-    @include helloMixin; /* 引入一盒混合宏 */
+    @include helloMixin; /* @include 引入一个混合宏 */
   }
 
   // 结果.css
@@ -191,8 +137,8 @@
     @include helloMixin;
   }
 
-  /*参数minin*/
-  @mixin sexy-border($color, $width) {
+  /*参数minin及默认参数*/
+  @mixin sexy-border($color: red, $width) {
     border: {
       color: $color;
       width: $width;
@@ -200,11 +146,11 @@
     }
   }
   .p {
-    @include sexy-border(blue, 1in);
+    @include sexy-border(blue, 10px);
   }
   ```
 
-- 继承：`@extend` 类似于逗号选择器（**很常用**）
+* 继承：`@extend` 类似于逗号选择器（**很常用**）
 
   ```scss
   /*简单继承*/
@@ -260,9 +206,16 @@
   .div1 .div-inner a {
     color: red;
   }
+
+  // 伪类的嵌套
+  a {
+    　&:hover {
+      color: #ffb3ff;
+    }
+  }
   ```
 
-- 条件和循环
+* 条件和循环
 
   ```scss
   $type: "tony";
@@ -357,7 +310,7 @@
     width: 5px;
   }
 
-  /*each*/
+  /*each，类似于for*/
   $map: (
     top: 1px,
     left: 2px,
@@ -444,6 +397,7 @@
   }
 
   /*list*/
+  // 下标从1开始
   $list: (1, 2, 3, 4, 5);
   .div {
     zoom: length($list);
@@ -535,3 +489,8 @@
   ```
 
 - Sass 的变量作用域：基于`{ }`
+
+- 注释
+
+  - 标准的 CSS 注释 `/* comment */` ，会保留到编译后的文件
+  - 单行注释 `// comment`，只保留在 SASS 源文件中，编译后被省略
