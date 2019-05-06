@@ -207,11 +207,16 @@
     color: red;
   }
 
-  // 伪类的嵌套
+  /* 伪类的嵌套 */
   a {
-    　&:hover {
-      color: #ffb3ff;
+    &:hover {
+      text-decoration: underline;
     }
+  }
+
+  // 结果.css
+  a:hover {
+    text-decoration: underline;
   }
   ```
 
