@@ -13,9 +13,11 @@
       <ui-btn :text="A"></ui-btn>
       <ui-btn :text="B"></ui-btn>
       <ui-btn :text="C"></ui-btn>
+
       <!-- 静态：text的值就是字符串"哈哈" -->
       <ui-btn text="哈哈"></ui-btn>
     </div>
+
     <script>
       Vue.component("ui-btn", {
         // 创建 text 自定义属性
@@ -33,6 +35,7 @@
       });
 
       // 父组件可以使用 `props` 把数据传给子组件，分为动态和静态 2 种，而且是单向的（只能父传子）
+      // props的值最好不要有“-”，要写成小驼峰形式
     </script>
   </body>
 </html>

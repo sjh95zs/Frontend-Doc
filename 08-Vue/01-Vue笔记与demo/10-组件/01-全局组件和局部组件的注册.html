@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- 全局 -->
-    <div id="app2">
+    <div id="app1">
       <div class="ui container">
         <ui-btn></ui-btn>
         <ui-btn></ui-btn>
@@ -18,8 +18,10 @@
       </div>
     </div>
 
+    <hr />
+
     <!-- 局部 -->
-    <div id="app1">
+    <div id="app2">
       <div class="ui container">
         <ui-btn></ui-btn>
         <ui-button></ui-button>
@@ -28,25 +30,34 @@
         <ui-btn></ui-btn>
       </div>
     </div>
+
+    <hr />
 
     <script>
       // 全局范围注册组件
       Vue.component("ui-btn", {
-        template: `<button class="ui button">全局：我放哪都行</button>`
+        template: `<button class="ui button blue">全局：我放哪都行</button>`
       });
-      let app2 = new Vue({
-        el: "#app2"
+
+      let app1 = new Vue({
+        el: "#app1"
       });
 
       // 局部范围注册组件
-      let app1 = new Vue({
-        el: "#app1",
+      let app2 = new Vue({
+        el: "#app2",
         components: {
           "ui-button": {
-            template: `<button class="ui button">局部：我只能放在这</button>`
+            template: `<button class="ui button red">局部：我只能放在这</button>`
           }
         }
       });
+
+      // 组件和指令有啥区别？
+      /* 
+        1、指令它是元素的属性，组件是一整个元素
+        2、工作中，建议多用组件
+       */
     </script>
   </body>
 </html>
