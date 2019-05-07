@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>slot插槽</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+  </head>
+  <body>
+    <h1>slot插槽</h1>
+    <hr />
+    <div id="app">
+      <!-- 使用插槽 -->
+      <jspang>
+        <span slot="bolgUrl">{{ jspangData.bolgUrl }}</span>
+        <span slot="netName">{{ jspangData.netName }}</span>
+        <span slot="skill">{{ jspangData.skill }}</span>
+      </jspang>
+    </div>
+
+    <!-- 定义模板 -->
+    <template id="tmp">
+      <div>
+        <p>博客地址：<slot name="bolgUrl">默认值1</slot></p>
+        <p>网名：<slot name="netName">默认值2</slot></p>
+        <p>技术类型：<slot name="skill">默认值3</slot></p>
+      </div>
+    </template>
+
+    <script>
+      let jspang = {
+        template: "#tmp"
+      };
+
+      let app = new Vue({
+        el: "#app",
+        data: {
+          jspangData: {
+            bolgUrl: "http://jspang.com",
+            netName: "技术胖",
+            skill: "Web前端"
+          }
+        },
+        components: {
+          jspang: jspang
+        }
+      });
+
+      // slot是标签的内容扩展，也就是说你用slot就可以在自定义组件时传递给组件内容，组件接收内容并输出
+    </script>
+  </body>
+</html>
