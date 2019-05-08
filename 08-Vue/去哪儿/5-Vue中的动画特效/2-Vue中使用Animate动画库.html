@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Vue中使用Animate动画库</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+  </head>
+  <style>
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .fade-enter-active {
+      transform-origin: left center;
+      animation: bounce-in 1s;
+    }
+    .fade-leave-active {
+      transform-origin: left center;
+      animation: bounce-in 1s reverse;
+    }
+  </style>
+  <body>
+    <div id="root">
+      <transition name="fade">
+        <div v-if="show">hello vue</div>
+      </transition>
+      <button @click="handleClick">切换</button>
+    </div>
+
+    <script>
+      var vm = new Vue({
+        el: "#root",
+        data: {
+          show: true
+        },
+        methods: {
+          handleClick: function() {
+            this.show = !this.show;
+          }
+        }
+      });
+
+      /* 
+        本节内容：
+          
+       */
+    </script>
+  </body>
+</html>
