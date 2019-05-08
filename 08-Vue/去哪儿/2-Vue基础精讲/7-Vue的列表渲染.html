@@ -73,7 +73,7 @@
           
           Vue.set全局方法就可以解决以上的问题：
             对于数组：Vue.set(数组, 索引, 新值)，比如：Vue.set(vm.arr, 1, "哈哈")
-            对于对象：Vue.set(对象, key, 新值)，比如：Vue.set(vm.userObj, "address", "beijing")
+            对于对象：Vue.set(对象, 属性名, 新值)，比如：Vue.set(vm.userObj, "address", "beijing")
           ps：
             1、vm.$set() 这个API也可以达到效果
             2、改变数组或对象的引用也可以达到效果

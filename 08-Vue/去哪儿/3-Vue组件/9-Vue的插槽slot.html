@@ -10,13 +10,13 @@
   <body>
     <div id="root">
       <!-- <body-content>
-        <div slot="header">header</div>
-        <div slot="footer">footer</div>
+        <div v-slot:"header">header</div>
+        <div v-slot:"footer">footer</div>
       </body-content> -->
 
       <child>
-        <!-- 作用域插槽：由父组件定义该怎么显示，一定要是template，slot-scope="datas"相当于把数据给到datas -->
-        <template slot-scope="datas">
+        <!-- 作用域插槽：由父组件定义该怎么显示，一定要是template，v-slot:default="datas"是子组件中的数据 -->
+        <template v-slot:default="datas">
           <li>{{ datas.item }}</li>
         </template>
       </child>
@@ -56,7 +56,7 @@
           插槽slot：子组件可以很方便地使用父组件传递的DOM
             1、具名
             2、默认值
-          作用域插槽：由父组件定义该怎么显示，一定要是template，slot-scope="datas"相当于把数据给到datas
+          作用域插槽：由父组件定义该怎么显示，一定要是template，v-slot:default="datas"是子组件中的数据
        */
     </script>
   </body>
