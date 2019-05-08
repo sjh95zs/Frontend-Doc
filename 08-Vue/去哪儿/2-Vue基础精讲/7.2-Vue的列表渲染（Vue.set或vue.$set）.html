@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vue.set全局操作</title>
+    <title>7.2-Vue的列表渲染（Vue.set或vue.$set）</title>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
   </head>
   <body>
-    <h1>Vue.set 全局操作</h1>
+    <h1>7.2-Vue的列表渲染（Vue.set或vue.$set）</h1>
     <div id="app">
       <ul>
         <li v-for="item in arr">{{ item }}</li>
@@ -21,6 +21,7 @@
       let outData = {
         arr: ["aaa", "bbb", "ccc"]
       };
+
       let app = new Vue({
         el: "#app",
         data: outData, // 引用外部数据
@@ -32,11 +33,6 @@
           }
         }
       });
-
-      // 为什么要有Vue.set的存在?
-      //    由于Javascript的限制，Vue不能自动检测以下变动的数组：
-      //      1. 当你利用索引直接设置一个数组项时，vue不会为我们自动更新
-      //      2. 当你修改数组的长度时，vue不会为我们自动更新
     </script>
   </body>
 </html>

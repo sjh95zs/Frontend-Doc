@@ -40,11 +40,14 @@
         }
       });
 
-      // 解析：
-      //   注册了一个组件 button-counter，然后这个组件在 app 组件里面被调用了，所以 button-counter 是 app 的子组件
-      //   父组件 app 通过 v-on:自定义事件='事件句柄' 绑定一个事件句柄，当子组件 this.$emit('xxxx'，[data]) 被调用时触发这个'事件句柄'
-      // 总结：
-      //   子组件事件click → 子组件事件句柄increment → 父组件father-increment + 传出一个数组 → 父组件事件句柄incrementTotal + 接收那个数组
+      /* 
+        本节内容：
+          解析：
+            注册了一个组件 button-counter，然后这个组件在 app 组件里面被调用了，所以 button-counter 是 app 的子组件
+            父组件 app 通过 v-on:自定义事件='事件句柄' 绑定一个事件句柄，当子组件 this.$emit('xxxx'，[data]) 被调用时触发这个'事件句柄'
+          总结：
+            通过$emit事件：子组件事件click → 子组件事件句柄increment → 父组件father-increment + 传出一个数组 → 父组件事件句柄incrementTotal + 接收那个数组
+       */
     </script>
   </body>
 </html>
