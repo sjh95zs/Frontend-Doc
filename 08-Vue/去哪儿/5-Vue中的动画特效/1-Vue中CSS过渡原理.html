@@ -4,33 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vue中使用Animate动画库</title>
+    <title>Vue中CSS过渡原理</title>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
   </head>
   <style>
-    @keyframes bounce-in {
-      0% {
-        transform: scale(0);
-      }
-      50% {
-        transform: scale(1.5);
-      }
-      100% {
-        transform: scale(1);
-      }
+    /* name不写的话，默认是v，如：.v-enter*/
+    .fade-enter {
+      opacity: 0;
     }
-
     .fade-enter-active {
-      transform-origin: left center;
-      animation: bounce-in 1s;
+      transition: opacity 1s;
+    }
+    .fade-leave-to {
+      opacity: 0;
     }
     .fade-leave-active {
-      transform-origin: left center;
-      animation: bounce-in 1s reverse;
+      transition: opacity 1s;
     }
   </style>
   <body>
     <div id="root">
+      <!-- name不写的话，默认是v -->
       <transition name="fade">
         <div v-if="show">hello vue</div>
       </transition>
@@ -52,7 +46,7 @@
 
       /* 
         本节内容：
-          
+          过渡：transition，本质就是增/删class类
        */
     </script>
   </body>

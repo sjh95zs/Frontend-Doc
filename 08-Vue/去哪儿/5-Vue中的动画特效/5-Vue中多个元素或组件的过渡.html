@@ -4,49 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Vue中CSS过渡动画原理</title>
+    <title>Vue中多个元素或组件的过渡</title>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
   </head>
   <style>
-    /* name不写的话，默认是v，如：.v-enter*/
-    .fade-enter {
+    .v-enter,
+    .v-leave-to {
       opacity: 0;
     }
-    .fade-enter-active {
-      transition: opacity 1s;
-    }
-    .fade-leave-to {
-      opacity: 0;
-    }
-    .fade-leave-active {
+    .v-enter-active,
+    .v-leave-active {
       transition: opacity 1s;
     }
   </style>
   <body>
     <div id="root">
-      <!-- name不写的话，默认是v -->
-      <transition name="fade">
-        <div v-if="show">hello vue</div>
+      <transition mode="out-in">
+        <component :is="type"></component>
       </transition>
-      <button @click="handleClick">切换</button>
+      <button @click="handleClick">toggle</button>
     </div>
 
     <script>
+      Vue.component("child", {
+        template: `<div>child</div>`
+      });
+
+      Vue.component("child-one", {
+        template: `<div>child-one</div>`
+      });
+
       var vm = new Vue({
         el: "#root",
         data: {
-          show: true
+          type: "child"
         },
         methods: {
           handleClick: function() {
-            this.show = !this.show;
+            this.type = this.type === "child" ? "child-one" : "child";
           }
         }
       });
 
       /* 
         本节内容：
-          过渡动画：transition，本质就是增/删class类
+          component动态切换组件+动画效果
        */
     </script>
   </body>
