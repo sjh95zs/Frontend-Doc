@@ -123,7 +123,7 @@ button {
 footer {
   position: fixed;
   right: -175px;
-  bottom: 80px;
+  top: 70px;
   padding: 15px 15px;
   text-align: left;
   font-size: 16px;
