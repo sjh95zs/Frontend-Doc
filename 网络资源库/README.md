@@ -32,3 +32,5 @@
 - 推荐个人博客：[阮一峰的个人网站](http://www.ruanyifeng.com/home.html)
 
 - 本地服务器构建工具：[WampServer](http://www.wampserver.com/)
+
+- 极简大纲笔记 | 一键生成思维导图：[幕布](https://mubu.com/)
