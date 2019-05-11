@@ -16,6 +16,6 @@
 2. ViewModel ->Vue（DOM Listeners、Data Bindings）
 3. Model ->Plain JS Objects
 
-**好处**：数据驱动，更注重 M 层
+**优点**：数据驱动，更注重 M 层
 
 ![MVP模式](img/MVVM模式.png)

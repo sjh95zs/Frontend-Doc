@@ -12,27 +12,26 @@
     />
   </head>
   <style>
-    .fade-enter {
+    .v-leave-to {
       opacity: 0;
     }
-    .fade-enter-active {
+    .v-leave-active {
       transition: opacity 3s;
     }
-    .fade-leave-to {
+    .v-enter-active-enter {
       opacity: 0;
     }
-    .fade-leave-active {
+    .v-enter-active {
       transition: opacity 3s;
     }
   </style>
   <body>
     <div id="root">
       <transition
-        :duration="{enter:5000,leave:3000}"
-        name="fade"
+        :duration="{enter:3000,leave:3000}"
         appear
-        enter-active-class="animated swing fade-enter-active"
         leave-active-class="animated shake fade-leave-active"
+        enter-active-class="animated swing fade-enter-active"
         appear-active-class="animated swing"
       >
         <div v-if="show">hello vue</div>
@@ -56,7 +55,7 @@
       /* 
         本节内容：
           appear与appear-active-class -> 过渡和动画结合使用
-          :duration="{enter:5000,leave:3000}" -> 自定义入/出的动画时长
+          :duration="{enter:3000,leave:3000}" -> 自定义入/出的动画时长
        */
     </script>
   </body>
