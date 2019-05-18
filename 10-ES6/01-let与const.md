@@ -1,5 +1,7 @@
 # let 与 const
 
+> 参考：http://es6.ruanyifeng.com/#docs/let
+
 ### var 和 let/const 的区别
 
 1. 块级作用域：大括号`{ }`
