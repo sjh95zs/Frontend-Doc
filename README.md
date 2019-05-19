@@ -2,6 +2,7 @@
 
 - wuxiaobin1995 的前端文档库，记录一条完整的前端学习图谱，开始于 2019-03-01
 - 有疑问的朋友，可发邮件至 845225263@qq.com 或 15602296388@163.com 或 wuxiaobin1995@gmail.com
+- 项目地址：https://github.com/wuxiaobin1995/Frontend-Doc
 
 ## 文件目录
 
