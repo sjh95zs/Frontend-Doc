@@ -16,7 +16,7 @@
 
      ```js
      if (true) {
-       let a = function() {} // 作用域为块级 令声明的函数作用域范围更清晰
+       let a = function() {}; // 作用域为块级 令声明的函数作用域范围更清晰
      }
      ```
 
@@ -32,13 +32,13 @@
    - var 命令和 function 命令声明的全局变量，依旧是顶层对象的属性；相反 ES6，let 命令、const 命令、class 命令声明的全局变量，不属于顶层对象的属性。也就是说，从 ES6 开始，全局变量将逐步与顶层对象的属性脱钩
 
    ```js
-   var a = 1
+   var a = 1;
    // 如果在 Node环境，可以写成 global.a
    // 或者采用通用方法，写成 this.a
-   window.a // 1
+   window.a; // 1
 
-   let b = 1
-   window.b // undefined
+   let b = 1;
+   window.b; // undefined
    ```
 
 ### const 命令两个注意点：
@@ -47,6 +47,7 @@
 2. 一旦声明值就不能改变：
    1. 值类型：不能改动
    2. 引用类型：变量指针不能变，数据还是可以改变的
+      - 可以使用`Object.freeze(引用类型名)`来冻结，使它的数据都不能改变
 
 ### ES6 声明变量的 6 种方法
 
