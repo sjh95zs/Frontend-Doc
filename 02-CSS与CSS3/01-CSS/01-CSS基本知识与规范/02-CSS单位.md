@@ -33,7 +33,7 @@
   }
   ```
 
-- rem：相对于根元素 html 的 font-size，默认下 1rem = 16px
+- rem：相对于根元素 html 的 font-size，默认下是 16px
 
   - 为了便于计算，一般把根元素 html 的 font-size 设为 100px，即 1rem = 100px
 
