@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>页面布局-三栏布局</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 浮动布局 -->
+    <section class="float">
+      <style>
+        .float .left {
+          float: left;
+          width: 300px;
+          height: 100px;
+          background: red;
+        }
+        .float .center {
+          height: 100px;
+          background: yellow;
+        }
+        .float .right {
+          float: right;
+          width: 300px;
+          height: 100px;
+          background: blue;
+        }
+      </style>
+      <!-- 注意顺序 -->
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h1>float解决方案</h1>
+        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+      </div>
+    </section>
+
+    <!-- 绝对布局 -->
+    <section class="absolute">
+      <style>
+        .absolute .left {
+          position: absolute;
+          left: 0;
+          width: 300px;
+          height: 100px;
+          background: red;
+        }
+        .absolute .center {
+          position: absolute;
+          left: 300px;
+          right: 300px;
+          height: 100px;
+          background: yellow;
+        }
+        .absolute .right {
+          position: absolute;
+          right: 0;
+          width: 300px;
+          height: 100px;
+          background: blue;
+        }
+      </style>
+      <div class="left"></div>
+      <div class="center">
+        <h1>absloute解决方案</h1>
+        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+      </div>
+      <div class="right"></div>
+    </section>
+
+    <!-- flex布局 -->
+    <section class="flex">
+      <style>
+        .flex {
+          display: flex;
+          margin-top: 150px;
+        }
+        .flex .left {
+          width: 300px;
+          height: 100px;
+          background: red;
+        }
+        .flex .center {
+          flex: 1; /* 关键 */
+          height: 100px;
+          background: yellow;
+        }
+        .flex .right {
+          width: 300px;
+          height: 100px;
+          background: blue;
+        }
+      </style>
+      <div class="left"></div>
+      <div class="center">
+        <h1>flex解决方案</h1>
+        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+      </div>
+      <div class="right"></div>
+    </section>
+
+    <!-- table布局 -->
+    <section class="table">
+      <style>
+        .table {
+          display: table;
+          width: 100%;
+          height: 100px;
+        }
+        .table .left {
+          display: table-cell;
+          width: 300px;
+          background: red;
+        }
+        .table .center {
+          display: table-cell;
+          background: yellow;
+        }
+        .table .right {
+          display: table-cell;
+          width: 300px;
+          background: blue;
+        }
+      </style>
+      <div class="left"></div>
+      <div class="center">
+        <h1>table解决方案</h1>
+        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+      </div>
+      <div class="right"></div>
+    </section>
+
+    <!-- grid布局 -->
+    <section class="grid">
+      <style>
+        .grid {
+          display: grid;
+          grid-template-rows: 100px;
+          grid-template-columns: 300px auto 300px;
+        }
+        .grid .left {
+          background: red;
+        }
+        .grid .center {
+          background: yellow;
+        }
+        .grid .right {
+          background: blue;
+        }
+      </style>
+      <div class="left"></div>
+      <div class="center">
+        <h1>grid解决方案</h1>
+        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+      </div>
+      <div class="right"></div>
+    </section>
+
+    <!-- 
+      浮动：脱离文档流，必须清除浮动，兼容性好
+      绝对定位：快捷简单，脱离文档流
+      flex：为了解决上面2个问题，比较完美
+      table：单元格会自适应其内容的高度
+      grid：可以做很多复杂的布局，代码量也较少
+
+      如果高度不固定：
+        float、绝对定位失效了
+     -->
+  </body>
+</html>
