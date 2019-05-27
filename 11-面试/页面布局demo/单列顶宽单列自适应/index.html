@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>单列顶宽单列自适应</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+  </style>
+  <body>
+    <!-- float -->
+    <section class="float">
+      <style>
+        .float {
+          overflow: hidden;
+        }
+        .float .left {
+          float: left;
+          width: 300px;
+          background: red;
+        }
+        .float .right {
+          overflow: hidden;
+          left: 300px;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>float 定宽</p></div>
+      <div class="right">
+        <p>自适应</p>
+        <p>自适应</p>
+      </div>
+    </section>
+
+    <!-- table -->
+    <section class="table">
+      <style>
+        .table {
+          display: table;
+          width: 100%;
+        }
+        .table .left {
+          display: table-cell;
+          width: 300px;
+          background: red;
+        }
+        .table .right {
+          display: table-cell;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>table 定宽</p></div>
+      <div class="right">
+        <p>自适应</p>
+        <p>自适应</p>
+      </div>
+    </section>
+
+    <!-- absolute -->
+    <section class="absolute">
+      <style>
+        .absolute {
+          position: relative;
+        }
+        .absolute .left {
+          position: absolute;
+          width: 300px;
+          left: 0;
+          top: 0;
+          background: red;
+        }
+        .absolute .right {
+          position: absolute;
+          right: 0;
+          top: 0;
+          left: 300px;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>absolute 定宽</p></div>
+      <div class="right">
+        <p>自适应</p>
+        <p>自适应</p>
+      </div>
+    </section>
+
+    <!-- flex -->
+    <section class="flex">
+      <style>
+        .flex {
+          display: flex;
+          margin-top: 150px;
+        }
+        .flex .left {
+          width: 300px;
+          background: red;
+        }
+        .flex .right {
+          flex: 1;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>flex 定宽</p></div>
+      <div class="right">
+        <p>自适应</p>
+        <p>自适应</p>
+      </div>
+    </section>
+
+    <!-- grid -->
+    <section class="grid">
+      <style>
+        .grid {
+          display: grid;
+          grid-template-columns: 300px auto;
+        }
+        .grid .left {
+          background: red;
+        }
+        .grid .right {
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>grid 定宽</p></div>
+      <div class="right">
+        <p>自适应</p>
+        <p>自适应</p>
+      </div>
+    </section>
+  </body>
+</html>

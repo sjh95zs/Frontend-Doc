@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>页面布局-三栏布局</title>
+    <title>左右定宽，中间自适应</title>
     <style>
       * {
         padding: 0;
@@ -12,12 +12,12 @@
         box-sizing: border-box;
       }
       section {
-        margin-top: 20px;
+        margin-bottom: 60px;
       }
     </style>
   </head>
   <body>
-    <!-- 浮动布局 -->
+    <!-- float -->
     <section class="float">
       <style>
         .float .left {
@@ -27,6 +27,7 @@
           background: red;
         }
         .float .center {
+          overflow: hidden;
           height: 100px;
           background: yellow;
         }
@@ -42,11 +43,11 @@
       <div class="right"></div>
       <div class="center">
         <h1>float解决方案</h1>
-        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+        <p>1.这是三栏布局的中间部分 2.这是三栏布局的中间部分</p>
       </div>
     </section>
 
-    <!-- 绝对布局 -->
+    <!-- absolute -->
     <section class="absolute">
       <style>
         .absolute .left {
@@ -74,17 +75,17 @@
       <div class="left"></div>
       <div class="center">
         <h1>absloute解决方案</h1>
-        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+        <p>1.这是三栏布局的中间部分 2.这是三栏布局的中间部分</p>
       </div>
       <div class="right"></div>
     </section>
 
-    <!-- flex布局 -->
+    <!-- flex -->
     <section class="flex">
       <style>
         .flex {
           display: flex;
-          margin-top: 150px;
+          margin-top: 200px;
         }
         .flex .left {
           width: 300px;
@@ -105,7 +106,7 @@
       <div class="left"></div>
       <div class="center">
         <h1>flex解决方案</h1>
-        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+        <p>1.这是三栏布局的中间部分 2.这是三栏布局的中间部分</p>
       </div>
       <div class="right"></div>
     </section>
@@ -136,7 +137,7 @@
       <div class="left"></div>
       <div class="center">
         <h1>table解决方案</h1>
-        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+        <p>1.这是三栏布局的中间部分 2.这是三栏布局的中间部分</p>
       </div>
       <div class="right"></div>
     </section>
@@ -162,7 +163,7 @@
       <div class="left"></div>
       <div class="center">
         <h1>grid解决方案</h1>
-        1.这是三栏布局的中间部分 2.这是三栏布局的中间部分
+        <p>1.这是三栏布局的中间部分 2.这是三栏布局的中间部分</p>
       </div>
       <div class="right"></div>
     </section>

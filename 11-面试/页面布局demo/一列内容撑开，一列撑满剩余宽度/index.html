@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>一列内容撑开，一列撑满剩余宽度</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      section {
+        margin-bottom: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- float -->
+    <section class="float">
+      <style>
+        .float {
+          overflow: hidden;
+        }
+        .float .left {
+          float: left;
+          background: red;
+        }
+        .float .right {
+          overflow: hidden;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>float 内容撑开</p></div>
+      <div class="right">
+        <p>撑满剩余宽度</p>
+        <p>撑满剩余宽度</p>
+      </div>
+    </section>
+
+    <!-- flex -->
+    <section class="flex">
+      <style>
+        .flex {
+          display: flex;
+        }
+        .flex .left {
+          background: red;
+        }
+        .flex .right {
+          flex: 1;
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>flex 内容撑开</p></div>
+      <div class="right">
+        <p>撑满剩余宽度</p>
+        <p>撑满剩余宽度</p>
+      </div>
+    </section>
+
+    <!-- grid -->
+    <section class="grid">
+      <style>
+        .grid {
+          display: grid;
+          grid-template-columns: auto 1fr;
+        }
+        .grid .left {
+          background: red;
+        }
+        .grid .right {
+          background: blue;
+        }
+      </style>
+      <div class="left"><p>grid 内容撑开</p></div>
+      <div class="right">
+        <p>撑满剩余宽度</p>
+        <p>撑满剩余宽度</p>
+      </div>
+    </section>
+  </body>
+</html>
