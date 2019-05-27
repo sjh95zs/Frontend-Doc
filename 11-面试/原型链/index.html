@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>原型链</title>
+  </head>
+  <body>
+    <script>
+      // 方式一：字面量
+      let o1 = {
+        name: 'o1'
+      };
+      let o2 = new Object({
+        name: 'o2'
+      });
+
+      // 方式二：构造函数
+      let M = function(name) {
+        this.name = name;
+      };
+      let o3 = new M('o3');
+
+      // 方式三：Object.create()
+      let o4 = Object.create({ name: 'o4' });
+    </script>
+  </body>
+</html>

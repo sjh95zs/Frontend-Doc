@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>面向对象</title>
+  </head>
+  <body>
+    <script>
+      /*
+       * 类的声明
+       */
+      function Animal() {
+        this.name = 'name';
+      }
+      /*
+       * ES6中的class使用
+       */
+      class Animal2 {
+        constructor() {
+          this.name = name;
+        }
+      }
+
+      /*
+       * 实例化
+       */
+      console.log(new Animal(), new Animal2());
+
+      /*
+       * 借助构造函数的继承
+       * 缺点：不能继承原型链上的东西
+       */
+      function Parent1() {
+        this.name = 'parent1';
+      }
+      function Child1() {
+        Parent1.call(this); // 继承
+        this.age = 20;
+      }
+      console.log(new Child1());
+
+      /*
+       * 借助原型链的继承
+       * 缺点：原型链上的东西是共享的，一变全变
+       */
+      function Parent2() {
+        this.name = 'parent2';
+        this.arr = [1, 2, 3];
+      }
+      Parent2.prototype.say = function() {
+        console.log('saysay');
+      };
+      function Child2() {
+        this.age = 20;
+      }
+      Child2.prototype = new Parent2(); // 原型链的继承
+
+      let s1 = new Child2();
+      let s2 = new Child2();
+      console.log(s1);
+      console.log(s2);
+      console.log(s1.say());
+      console.log(s2.say());
+
+      /*
+       * 借助组合的继承（最常用）
+       * 优点：其实就是解决了上面2种的缺点
+       */
+      function Animal(color, weight) {
+        this.color = color;
+        this.weight = weight;
+      }
+      Animal.prototype.eat = function() {
+        console.log('chi chi chi');
+      };
+
+      function Mammal(color, weight) {
+        Animal.call(this, color, weight); // 继承个性。以构造函数方式调用，this指向创建的那个对象
+      }
+      Mammal.prototype = Object.create(Animal.prototype); // 继承共性
+      Mammal.prototype.constructor = Mammal; // 重设一下构造器
+      Mammal.prototype.suckle = function() {
+        console.log('挤奶');
+      };
+
+      function Person(color, weight) {
+        Mammal.call(this, color, weight); // 继承个性。以构造函数方式调用，this指向创建的那个对象
+      }
+      Person.prototype = Object.create(Mammal.prototype); // 继承共性
+      Person.prototype.constructor = Person; // 重设一下构造器
+      Person.prototype.lie = function() {
+        console.log('我很帅');
+      };
+
+      var lsd = new Person('黑色', 65); // 李栓蛋
+      console.log(lsd);
+      lsd.eat(); // Animal的能力
+      lsd.suckle(); // Mammal的能力
+      lsd.lie(); // Person的能力
+      var whh = new Person('金色', 100); // 王花花
+      console.log(whh);
+      whh.eat();
+      whh.suckle();
+      whh.lie();
+    </script>
+  </body>
+</html>
