@@ -54,7 +54,7 @@ xhr.open("GET", "/api/hello");
 xhr.send();
 // 【4】当 readyState 属性改变时，就会调用该事件句柄
 xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
+  if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 304)) {
     // 【5】获取返回的数据
       console.log(xhr.responseText);
       console.log("请求成功");
@@ -70,9 +70,9 @@ xhr.onreadystatechange = function() {
   - 如果需要像 HTML 表单那样 POST 数据，请使用 setRequestHeader() 来添加 HTTP 头，然后在 send() 方法中规定您希望发送的数据
 
     ```js
-    xhr.open("POST", "/try/ajax/demo_post2.php");
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send("fname=Henry&lname=Ford");
+    xhr.open('POST', '/try/ajax/demo_post2.php');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.send('fname=Henry&lname=Ford');
     ```
 
   - async 设置为异步 true：在等待服务器响应时执行其他脚本，当响应就绪后对响应进行处理
@@ -106,10 +106,10 @@ XMLHttpRequest 升级版，新增了如下内容：
 
    ```js
    $.ajax({
-     url: "http://localhost/demo/demo-4/server/user.json", //请求地址
+     url: 'http://localhost/demo/demo-4/server/user.json', //请求地址
      data: { name: fox, age: 18 }, //发送的数据
-     type: "GET", // 请求的方式
-     dataType: "json", // 返回的数据类型
+     type: 'GET', // 请求的方式
+     dataType: 'json', // 返回的数据类型
      success: function(argument) {}, // 请求成功执行的方法
      beforeSend: function(argument) {}, // 在发送请求之前调用,可以做一些验证之类的处理
      error: function(argument) {
@@ -160,9 +160,9 @@ XMLHttpRequest 升级版，新增了如下内容：
 
      ```js
      var Obj = {
-       name: "fox",
+       name: 'fox',
        age: 18,
-       skill: "撩妹"
+       skill: '撩妹'
      };
 
      // 将 js 对象格式化为 JSON 字符串
@@ -215,7 +215,7 @@ XMLHttpRequest 升级版，新增了如下内容：
 
    ```html
    <script>
-     $.getJSON("http://www.runoob.com/try/ajax/01.php?callback=?", function(
+     $.getJSON('http://www.runoob.com/try/ajax/01.php?callback=?', function(
        data
      ) {
        console.log(data);
