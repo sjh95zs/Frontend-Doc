@@ -15,11 +15,24 @@
     </audio>
 
     <!-- 视频 -->
-    <video controls>
+    <video
+      id="myVideo"
+      controls
+      width="800px"
+      height="300px"
+      poster="./source/树下的猫/cat.jpg"
+    >
       你的浏览器不支持该标签!
       <source src="source/pal4.mp4" type="video/mp4" />
       <source src="#ogg" type="video/ogg" />
     </video>
+    <script>
+      // let VideoNode = document.querySelector('#myVideo');
+      // VideoNode.play();
+      // setInterval(() => {
+      //   console.log(VideoNode.duration - VideoNode.currentTime);
+      // }, 1000);
+    </script>
 
     <!-- 画布 -->
     <canvas></canvas>
