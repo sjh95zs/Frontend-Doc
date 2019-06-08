@@ -1,4 +1,4 @@
-# let 与 const
+# let 与 const【常用】
 
 > 参考：http://es6.ruanyifeng.com/#docs/let
 

@@ -8,7 +8,7 @@
 - 标签名：`getElementsByTagName()`
 - 类名：`getElementsByClassName()`
 - 返回第一个匹配的元素：`querySelector()`
-- 返回全部匹配的元素：`querySelectorAll()`
+- 返回全部匹配的元素数组：`querySelectorAll()`
 
 ### 通过"父子兄"关系获取
 
