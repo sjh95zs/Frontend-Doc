@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>防抖</title>
+  </head>
+  <body>
+    <button id="btn">防抖</button>
+
+    <script>
+      function debounce(fn, delay) {
+        // 创建一个定时器
+        let timer = 0;
+        console.log(timer);
+        return function() {
+          // 清除上一次定时器
+          clearTimeout(timer);
+          timer = setTimeout(function() {
+            fn.apply(this);
+          }, delay);
+        };
+      }
+      document.getElementById('btn').onclick = debounce(function() {
+        console.log('点击事件被触发' + Date.now());
+      }, 1000);
+
+      /* 
+        其原理就第一次调用函数，创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。如果前一个定时器已经执行过了，这个操作就没有任何意义。然而，如果前一个定时器尚未执行，其实就是将其替换为一个新的定时器，然后延迟一定时间再执行
+       */
+    </script>
+  </body>
+</html>

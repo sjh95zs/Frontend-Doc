@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>节流</title>
+    <style>
+      html,
+      body {
+        height: 500%; /* 让其出现滚动条 */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function throttle(fn, delay) {
+        // 初始化上一次函数触发的时间
+        let lastTime = 0;
+        console.log(lastTime);
+        return function() {
+          // 记录当前函数触发的时间
+          let nowTime = Date.now();
+          if (nowTime - lastTime > delay) {
+            // 修正this指向问题，并执行fn
+            fn.call(this);
+            // 同步时间
+            lastTime = nowTime;
+          }
+        };
+      }
+      document.onscroll = throttle(function() {
+        console.log('scroll事件被触发了' + Date.now());
+      }, 200);
+
+      /* 
+        原理是用时间戳来判断是否已到回调该执行时间，记录上次执行的时间戳，然后每次触发 scroll 事件执行回调，回调中判断当前时间戳距离上次执行时间戳的间隔是否已经到达 规定时间段，如果是，则执行，并更新上次执行的时间戳，如此循环
+       */
+    </script>
+  </body>
+</html>
