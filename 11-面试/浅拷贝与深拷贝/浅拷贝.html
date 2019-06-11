@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>浅拷贝</title>
+  </head>
+  <body>
+    <script>
+      /*
+       * Object.assign 只会拷贝所有的属性值到新的对象中，如果属性值是对象的话，拷贝的是地址
+       * 浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，那么就又回到最开始的话题了，两者享有相同的地址。要解决这个问题，我们就得使用深拷贝了
+       */
+      let a = {
+        username: 'kobe'
+      };
+      let b = Object.assign({}, a);
+      b.username = 'wade';
+      console.log(a); // {username: "kobe"}
+    </script>
+  </body>
+</html>

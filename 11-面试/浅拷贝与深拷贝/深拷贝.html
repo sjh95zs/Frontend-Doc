@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>深拷贝</title>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+  </head>
+  <body>
+    <script>
+      /*
+       * 使用函数库lodash：lodash是一个著名的javascript原生库，不需要引入其他第三方依赖
+       * 简单的说就是，很多方法lodash已经帮你写好了，直接调用就行
+       */
+      let obj1 = {
+        a: 1,
+        b: { f: { g: 1 } },
+        c: [1, 2, 3]
+      };
+      let obj2 = _.cloneDeep(obj1);
+      obj2.b.f.g = 'haha';
+      console.log(obj1.b.f.g); // 1
+      console.log(obj1.b.f === obj2.b.f); // false
+    </script>
+  </body>
+</html>

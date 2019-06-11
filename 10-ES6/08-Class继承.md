@@ -1,25 +1,27 @@
 # Class 继承
 
-> 参考：https://segmentfault.com/a/1190000017139065
+> 参考：https://github.com/ljianshu/Blog/issues/20
 
 ### 传统构造函数继承 VS ES6 继承
 
 ```js
-// 传统构造函数继承
-function Animal() {
-  this.eat = function() {
-    alert('Animal eat');
-  };
+// 寄生组合继承
+function Parent(value) {
+  this.val = value;
 }
-function Dog() {
-  this.bark = function() {
-    alert('Dog bark');
-  };
+Parent.prototype.getValue = function() {
+  console.log(this.val);
+};
+
+function Child(value) {
+  Parent.call(this, value);
 }
-Dog.prototype = new Animal(); // 绑定原型，实现继承
-var hashiqi = new Dog();
-hashiqi.bark(); //Dog bark
-hashiqi.eat(); //Animal eat
+Child.prototype = Object.create(Parent.prototype);
+Child.prototype.constructor = Child;
+
+const child = new Child(1);
+child.getValue(); // 1
+child instanceof Parent; // true
 ```
 
 ```js
@@ -34,16 +36,17 @@ class Animal {
 }
 class Dog extends Animal {
   constructor(name) {
-    super(name); // 有extend就必须要有super，它代表父类的构造函数，即Animal中的constructor
+    super(name); // 可以看成 Animal.call(this, name)
     this.name = name;
   }
   say() {
     alert(this.name + ' say');
   }
 }
+
 const dog = new Dog('哈士奇');
-dog.say(); //哈士奇 say
-dog.eat(); //哈士奇 eat
+dog.say(); // 哈士奇 say
+dog.eat(); // 哈士奇 eat
 ```
 
 区别：
