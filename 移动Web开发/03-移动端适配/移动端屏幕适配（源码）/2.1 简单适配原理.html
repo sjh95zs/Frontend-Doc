@@ -22,16 +22,6 @@
   </head>
   <body>
     <header class="header-container"></header>
-    <script>
-      setRemUnit();
-      window.onresize = setRemUnit; // 视口每发生一次改变，就执行一遍setRemUnit函数
-      function setRemUnit() {
-        let desW = 750; // 设计稿的宽度
-        let viewWidth = document.documentElement.clientWidth; // 当前屏幕的宽度
-        // 人为规定1rem = 100px，根据当前屏幕的宽度和设计稿的宽度来计算我们 HTML 的 font-size 值
-        document.documentElement.style.fontSize =
-          (viewWidth / desW) * 100 + 'px';
-      }
-    </script>
+    <script src="js/simple.js" defer></script>
   </body>
 </html>
