@@ -8,19 +8,27 @@ import { Input, Button, List } from 'antd'
 
 // 定义一个无状态组件，性能极大提升
 const TodoListUI = props => {
+  const {
+    inputValue,
+    handleInputChange,
+    handleBtnClick,
+    list,
+    handleItemDelete
+  } = props
+
   return (
     <div style={{ marginTop: '10px', marginLeft: '10px' }}>
       <div>
         <Input
-          value={props.inputValue}
+          value={inputValue}
           placeholder='请输入...'
           style={{ width: '300px' }}
-          onChange={props.handleInputChange}
+          onChange={handleInputChange}
         />
         <Button
           type='primary'
           style={{ marginLeft: '10px' }}
-          onClick={props.handleBtnClick}
+          onClick={handleBtnClick}
         >
           提交
         </Button>
@@ -29,11 +37,11 @@ const TodoListUI = props => {
         <List
           style={{ marginTop: '10px', width: '300px' }}
           bordered
-          dataSource={props.list}
+          dataSource={list}
           renderItem={(item, index) => (
             <List.Item
               onClick={() => {
-                props.handleItemDelete(index) // 可以使用该方法去应对bind()传值问题
+                handleItemDelete(index) // 可以使用该方法去应对bind()传值问题
               }}
             >
               {item}
