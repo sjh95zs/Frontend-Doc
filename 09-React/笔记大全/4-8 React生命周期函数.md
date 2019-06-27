@@ -3,6 +3,8 @@
 > 每个组件都有一个生命周期
 > 如果有父子关系，执行顺序的进出口都是 render【即父的生命周期执行到 render，就会进入到子的生命周期，子执行完后就会出来，然后父从 render 继续往下执行】
 
+![react生命周期](images/react生命周期.png)
+
 - 初始化阶段
 
   1. constructor(){}：props 和 state 的初始化
