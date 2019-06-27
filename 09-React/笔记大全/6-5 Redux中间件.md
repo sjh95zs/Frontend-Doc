@@ -1,6 +1,7 @@
 # Redux 中间件
 
 > 作用：异步代码拆分，处理异步操作
+> 小提示：把中间件想象为赋予 store 的各种技能。例如：给 store 添加 redux-thunk，相当于 store 拥有了 dispatch 异步 action 的技能
 
 ![Redux中间件图解](images/Redux中间件图解.png)
 

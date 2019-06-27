@@ -1,7 +1,7 @@
 # Redux
 
 > 数据共享，解决跨组件通信问题
-> Redux = Reducer + Flux
+> 这里需要再强调一下：Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript
 
 ### Redux 工作流程
 
@@ -13,7 +13,7 @@
 
 ### 三大基本原则
 
-1. store 只能有一个
+1. store 只能有一个，当需要拆分数据处理逻辑时，你应该使用多个 reducer 组合而不是创建多个 store
 2. 只有 store 能改变自己的内容，而不是 reducer
 3. reducer 必须是纯函数
    > 纯函数是指给定固定的输入，就一定会有固定的输出，且不会有任何副作用
