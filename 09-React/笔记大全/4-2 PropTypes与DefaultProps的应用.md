@@ -1,4 +1,4 @@
-# 4-2PropTypes 与 DefaultProps 的应用
+# PropTypes 与 DefaultProps 的应用
 
 - 使用 PropTypes 进行 props 的类型检查，出于性能方面的考虑，**仅在开发模式下进行检查**
 

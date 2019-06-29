@@ -1,4 +1,4 @@
-# 4-3 props，state 与 render 函数的关系
+# props，state 与 render 函数的关系
 
 - 当组件的 props 或 state 发生改变时，render 函数就会被执行【react 生命周期的第三阶段：更新阶段】
 

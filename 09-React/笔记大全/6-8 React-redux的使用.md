@@ -1,4 +1,4 @@
-# React-redux 的使用
+# react-redux 的使用
 
 ### Provider
 
@@ -24,7 +24,7 @@ const App = (
 ReactDom.render(App, document.getElementById('root'))
 ```
 
-### cnnect
+### connect
 
 让 connect 和 TodoList 组件做连接
 
