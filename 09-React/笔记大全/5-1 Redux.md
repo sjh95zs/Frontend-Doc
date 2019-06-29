@@ -30,3 +30,12 @@
 ### Redux 中发送异步请求
 
 同样的操作，使用 axios，将引出接下来的 Readux 中间件
+
+### 更优方案
+
+> 直接使用 react-redux 库，可理解为 redux 专门为 react 服务的一个库。
+> 两个比较关键的概念：Provider 和 connect 方法
+
+### 注意：
+
+- react 中的数据 state 和 redux 的数据 state，没有半毛钱关系。【React 中的 state 是组件内部自己的状态信息，而 Redux 中的 state 是 Redux 自己的数据】
