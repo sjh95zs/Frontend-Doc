@@ -1,4 +1,4 @@
-# 4-4 React 中的虚拟 DOM
+# React 中的虚拟 DOM
 
 ### 一般人的思路
 
