@@ -1,9 +1,18 @@
 # Redux
 
-> 数据共享，解决跨组件通信问题
-> 这里需要再强调一下：Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript
+> 定义：一个状态管理框架
+> 核心思想：把组件的状态放到一个 store 中统一存储、管理，并遵循单向数据流和不可变数据
+> 作用：让组件通信更容易
+> 强调一下：Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript
 
-### Redux 工作流程
+![组件通信对比](images/组件通信对比.png)
+![store](images/store.png)
+
+### Redux 的可预测性:
+
+![Redux的可预测性](images/Redux的可预测性.png)
+
+### Redux 工作流程:
 
 ![Redux工作流图解](images/Redux工作流图解.jpg)
 
@@ -23,9 +32,9 @@
 ### 核心 API 小结
 
 - createStore()：创建一个 store
-- store.dispatch(action)：把 action 纯递给 store
 - store.getState()：获取 store 的所有内容
-- store.subscribe(func)：订阅 store 的变化，一旦有变化，就会执行 func 回调函数
+- store.dispatch(action)：把 action 纯递给 store
+- store.subscribe(func)：监听 store 的变化，一旦有变化，就会执行 func 回调函数
 
 ### Redux 中发送异步请求
 
@@ -39,3 +48,12 @@
 ### 注意：
 
 - react 中的数据 state 和 redux 的数据 state，没有半毛钱关系。【React 中的 state 是组件内部自己的状态信息，而 Redux 中的 state 是 Redux 自己的数据】
+
+### 如何组织 action 和 reducer
+
+![action和reducer的组织](images/action和reducer的组织.png)
+
+### 不可变数据
+
+1. 使用浅/深拷贝
+2. 使用第三方库，如 immutable.js、redux-immutable

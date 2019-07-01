@@ -1,32 +1,38 @@
 # Redux 中间件
 
-> 作用：异步代码拆分，处理异步操作
-> 小提示：把中间件想象为赋予 store 的各种技能。例如：给 store 添加 redux-thunk，相当于 store 拥有了 dispatch 异步 action 的技能
+> 定义：在 middleware 中，我们可以检阅每一个流过的 action，并挑选出特定类型的 action 进行相应操作，以此来改变 action。简单来讲，Redux middleware 提供了一个分类处理 action 的机会
+>
+> 流程：截获 action → 异步处理 → 发出处理完的 action 给 store → store 发给 reducer，reducer 根据不同 action 做出不同的处理
+>
+> 注意：异步 action 不是特殊 action，而是多个同步 action 的组合使用（比如：ajax 成功就返回 action A，失败就返回 action B，等等...），最后 reducer 就根据不同的 action 做出不同的处理
+
+- 何时截获？
+  答：如果这个 action 是一个函数，而非对象，就会截获，并且执行这个函数（这个函数往往就是处理异步操作的）
 
 ![Redux中间件图解](images/Redux中间件图解.png)
 
-### 什么是 Redux 的中间件？
-
-> 中间件指的就是对 dispatch()方法的封装、升级
-
-- 中间：action 和 store 之间
 - 对比
-  - 最原始的 dispatch()方法接收一个对象（即 action），然后发送给 store
-  - 使用中间件：此时给 dispatch()方法接收的是一个函数，它就会执行这个函数，而函数内部就是一些异步的操作
 
-### Redux-thunk
+  - 不使用中间件：dispatch()方法接收一个对象（即 action），然后直接就发送给 store，store 再发给 reducer
 
-- 为什么要用？
+    ![不使用Redux中间件](images/不使用Redux中间件.png)
 
-  1. 因为如果你把异步函数（比如 ajax 请求）放到组件的生命周期函数中执行，这个生命周期钩子会变得越来越复杂
-  2. 方便自动化测试
+  - 使用中间件：此时给 dispatch()方法接收的是一个函数，它就会执行这个函数，而函数内部就是一些异步的操作，然后返回新的 action（比如成功后的 action A，或者失败后的 action B），最后 reducer 就根据不同的 action 做出不同的处理
 
-- 使得 action 可以是函数，而不限制只能是对象
+    ![使用Redux中间件.png](images/使用Redux中间件.png)
 
-- ajax 请求放到哪里执行？
-  放到 actionCreators.js 中执行
+### 一、Redux-thunk
 
-### 更优选择之 Redux-saga
+- 使用场景
+  简单的项目
 
 - 异步代码放到哪？
-  新建 sagas.js，放到这里边
+  放到 actionCreators.js 中执行
+
+### 二、更优选择之 Redux-saga
+
+- 使用场景
+  复杂的项目
+
+- 异步代码放到哪？
+  单独一个 sagas.js 文件，集中管理异步操作，与同步操作分离
